@@ -17,14 +17,16 @@
                 <!-- Tables -->
                 <div class="card" >
      
-                  <div class="table" data-aos="fade-up">
+                  <div class="table"  style="overflow-x:auto;" data-aos="fade-up">
                     <table class="table align-items-center table-flush">
                       <thead class="thead-light">
                         <tr>
                           <th>ลำดับที่</th>
-                          <th>ชื่อ - สกุล</th>
-                          <th>E-mail</th>
-                          <th >Action</th>
+                          <th>User_ID</th>
+                          <th>Status</th>
+                          <th>​Email</th>
+                          <th>Status</th>
+                          <th>Form</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -33,7 +35,11 @@
                         <tr>
                           <th>{{$i++}}</th>
                           <td>{{$row->name}}</td>
+                          <td>{{'$row->status'}}</td>
                           <td>{{$row->email}}</td>
+                          <td>
+                            <a class="btn btn-primary" href="{{url('/status')}}" role="button"><i class="bi bi-eye-fill"></i></a>
+                          </td>
                           <td>
                             <a class="btn btn-primary" href="{{url('user/menu2')}}" role="button"><i class="bi bi-eye-fill"></i></a>
                           </td>

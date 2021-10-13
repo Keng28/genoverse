@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAddcalendarsTable extends Migration
+class CreateAddreportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateAddcalendarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('addcalendars', function (Blueprint $table) {
+        Schema::create('addreports', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
-            $table->integer('doctor');
-            $table->time('time');
-            $table->date('date');
             $table->string('category');
-            $table->string('link');
+            $table->string('file');
+            $table->integer('user_id');
+            $table->integer('doctor_id');
             $table->timestamps();
-            $table->softDeletes();
-
         });
     }
 
@@ -34,6 +30,6 @@ class CreateAddcalendarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addcalendars');
+        Schema::dropIfExists('addreports');
     }
 }

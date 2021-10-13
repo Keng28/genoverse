@@ -16,54 +16,38 @@
               <div class="col-lg-12 mb-4">
                 <!-- Tables -->
                 <div class="card" >
-                  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-end" data-bs-toggle="modal">
-                      <!-- Button trigger modal -->
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <i class="bi bi-plus-lg"></i> เลือกวันนัด
-                      </button>
-                  </div>
+                  
+  
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel" style="color: #000;">เพิ่มวันนัดหมาย</h5>
+                          <h5 class="modal-title" id="exampleModalLabel" style="color: #000;">เลือกวันนัดหมาย</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+{{$calendar2}}
+                        @foreach($calendar2 as $row)
                         <div class="modal-body col-lg-12">
+                        <form action="{{url('/addCalender/update/'.$row->id)}}" method="post">
+                        @csrf
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <input type="text" class="form-control" name="link" value="{{$row->link}}">
 
-                        <div class="col-lg-12">
-                          <div class="input-group mb-3 ">
-                            <div class="input-group-prepend">
-                              <label class="input-group-text" for="inputGroupSelect01">วันนัด</label>
-                            </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
+                            {{$row->date}}
+                            {{$row->time}}
+                          </li>
+                        </ul>                
                         </div>
-                        <div class="input-group mb-3 ">
-                          <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">เวลานัด</label>
-                          </div>
-                          <select class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                      
+                        @endforeach
 
-                          
-                        </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
-                          <button type="button" class="btn btn-primary">นัดหมาย</button>
+                          <button type="submit" class="btn btn-primary">เลือกวันนัด</button>
                         </div>
+                        </form>
+
                       </div>
                     </div>
                   </div>
@@ -74,36 +58,72 @@
                   
                   
                   <div class="table" data-aos="fade-up">
-                    <table class="table align-items-center table-flush">
+                    <table class="table table-striped table-bordered table-sm">
                       <thead class="thead-light">
                         <tr>
-                          <th>วันนัด</th>
-                          <th>เวลานัด</th>
-                          <th >Action</th>
+                          <th>ลำดับ</th>
+                          <th>ประเภทการนัดหมาย</th>
+                          <th>วัน /เวลานัดหมาย</th>
+                          <th>แพทย์</th>
+                          <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>02-12-2021</td>
-                          <td>13.00</td>
+                          <td>1</td>
+                          <td>Pre-test Counseling</td>
                           <td>
-                            <a class="btn btn-danger" href="user.html" role="button"><i class="bi bi-trash-fill"></i></a>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-plus-lg"></i> เลือกวันนัด
+                      </button>                          </td>
+                          <td>นายแพทย์ ก </td>
+                          <td>
                             <a class="btn btn-primary" href="user.html" role="button"><i class="bi bi-telephone-fill"></i></a>
                           </td>
                         </tr>
-                        
                         <tr>
-                          <td>02-12-2021</td>
-                          <td>13.00</td>
+                          <td>2</td>
+                          <td>Blood Collection</td>
                           <td>
-                            <a class="btn btn-danger" href="user.html" role="button"><i class="bi bi-trash-fill"></i></a>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-plus-lg"></i> เลือกวันนัด
+                      </button>                          </td>
+                          <td>นายแพทย์ ก </td>
+                          <td>
+                            <a class="btn btn-primary" href="user.html" role="button"><i class="bi bi-telephone-fill"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Post-test Counseling</td>
+                          <td>
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="bi bi-plus-lg"></i> เลือกวันนัด
+                      </button>                          </td>
+                          <td>นายแพทย์ ก </td>
+                          <td>
                             <a class="btn btn-primary" href="user.html" role="button"><i class="bi bi-telephone-fill"></i></a>
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                   
+
                   </div>
+                  
                 </div>
+                <p class="text-muted">
+                  **ท่านสามารถกดเลือดวันได้เพียงแค่ 1 ครั้งเท่านั้น หากต้องการปรับเปลี่ยนวัน และเวลานัดหมาย                
+                </p>
+                <p class="text-muted">
+                  โปรดติดต่อ Admin ตามช่องทางดังต่อไปนี้                
+                </p>
+                <p class="text-muted">
+                  E-mail: admin@gmail.com               
+                </p>
+                <p class="text-muted">
+                Phone: 099-999-9999                
+                </p>
               </div>
             </div>
             <!--Row-->

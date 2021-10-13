@@ -11,7 +11,9 @@ class ListnameController extends Controller
 {
     public function listname(){
         $listname = User::all();
-
+        //$Auth = Auth::user();
+        
+        //dd($Auth);
         //return view('admin.service.index',compact('services'));
         return view('admin.menu1',compact('listname'));
     }

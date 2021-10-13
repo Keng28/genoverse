@@ -2675,7 +2675,7 @@ section {
   background: hsl(0, 0%, 100%);
   min-height: 30px;
   margin-top: 82px;
-  color: #fff;
+  color: rgb(199, 79, 79);
 }
 
 .userform h2 {
@@ -2767,14 +2767,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# user-process
+# user-process font-color
 --------------------------------------------------------------*/
 .userprocess {
   padding: 20px 0 20px 0;
   background: hsl(0, 0%, 100%);
   min-height: 30px;
   margin-top: 82px;
-  color: #fff;
+  color: rgb(5, 109, 161);
 }
 
 .userprocess h2 {
@@ -2868,6 +2868,8 @@ section {
 .userprocess .table tbody {
   text-align: center;
 }
+
+
 
 
 

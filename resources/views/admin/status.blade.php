@@ -23,27 +23,31 @@
                           <th>No</th>
                           <th>User_ID</th>
                           <th >Status</th>
-                          <th >View</th>
+                          <th >Done</th>
                         </tr>
                       </thead>
-
-                      @foreach($user as $row)
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>{{$row->id}}</td>
+                          <td>U:0909302</td>
                           <td>{{"Status"}}</td>
                           <td>
-                            <a class="btn btn-primary" href="{{ route('menu8')}}" role="button"><i class="bi bi-eye-fill"></i></a>
+                            <a class="btn btn-primary" href="doctor-report-1.html" role="button"><i class="bi bi-eye-fill"></i></a>
                           </td>
-                          
+                        </tr>
+
+                        <tr>
+                          <td>2</td>
+                          <td>U:0909302</td>
+                          <td>{{"Status"}}</td>
+                          <td>
+                            <a class="btn btn-primary" href="doctor-report-1.html" role="button"><i class="bi bi-eye-fill"></i></a>
+                          </td>
                         </tr>
                         
-                      </tbody>
-                      @endforeach
-                    </table>
-                    {{$user}}
 
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>

@@ -25,7 +25,7 @@
       <div class="container">
 
       <div class="row feture-tabs " data-aos="fade-up">
-        <div class="col-lg-5 align-self-center ">
+        <div class="col-lg-5 align-self-center card " style="background: #F4F2FA; border-width:0">
 
               <div class="box" data-aos="fade-up" data-aos-delay="400">
               @if (session('status'))
@@ -33,9 +33,6 @@
                   {{ session('status') }}
               </div>
               @endif
-
-  
-
 
               <form action="{{ route('login') }}" method="post" class='php-form'>
               @csrf
@@ -51,9 +48,20 @@
                     <input id="password" class="form-control" type="password" name="password" placeholder="Password" required autocomplete="current-password">
                     <a href="#" class="d-flex flex-row-reverse">Forgot Password</a>
                 </div>
-                <button class="ml-4">
-            {{ __('Log in') }}
-        </button>
+
+
+
+                @error('email')
+                  <div class="my-2">
+                    <span class="text-danger"> {{$message}}</span>
+                  </div>
+                @enderror
+
+                <div class="col-md-12 text-center">
+                <button class="btn btn-primary ">
+                    {{ __('Log in') }}
+                </button>
+                </div>
 
    
           

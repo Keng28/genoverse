@@ -31,21 +31,21 @@
               <div class="menubody-box blue">
                 <i class="bi bi-people" style="color: #bb0852;"></i>
                 <div>
-                  <a href="{{ route('menu7')}}" class="stretched-link">การแปลผล</a>
+                  <a href="{{ route('adminreport')}}" class="stretched-link">การแปลผล/อัพโหลด</a>
                 </div>
               </div>
             </div>
-
+<!--
             <div class="col-lg-3 col-md-6 position-relative">
               <div class="menubody-box blue">
                 <i class="bi bi-upload" style="color: #bb0852;"></i>
                 <div>
-                  <a href="{{ route('menu8')}}" class="stretched-link">อัพโหลดผล</a>
+                  <a href="{{ route('menu8')}}" class="stretched-link">รายงาน/อัพโหลดผล</a>
                 </div>
               </div>
             </div>
           </div>
-
+-->
         </div>
 
       </div>

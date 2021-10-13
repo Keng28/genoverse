@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AddcalendarController;
+use App\Http\Controllers\AddreportController;
+use App\Http\Controllers\FromController;
+
 
 use App\Http\Controllers\ListnameController;
 use App\Models\User;
@@ -24,18 +27,86 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/status', function () {
+    return view('admin/status');
+});
+Route::get('/form1', function () {
+    return view('form1');
+});
+Route::get('/form2', function () {
+    return view('form2');
+});
+Route::get('/form3', function () {
+    return view('form3');
+});
+Route::get('/form4', function () {
+    return view('form4');
+});
+Route::get('/form5', function () {
+    return view('form5');
+});
+Route::get('/form6', function () {
+    return view('form6');
+});
+Route::get('/form7', function () {
+    return view('form7');
+});
+Route::get('/form8', function () {
+    return view('form8');
+});
+Route::get('/form9', function () {
+    return view('form9');
+});
+Route::get('/form10', function () {
+    return view('form10');
+});
+Route::get('/form11', function () {
+    return view('form11');
+});
+Route::get('/form12', function () {
+    return view('form12');
+});
+Route::get('/form13', function () {
+    return view('form13');
+});
+
+Route::get('/reportdetail', function () {
+    return view('reportdetail');
+});
+
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     
     Route::get('/index',[HomeController::class,'index'])->name('index');
 
     Route::get('/addCalender/all',[AddcalendarController::class,'index'])->name('addCalenderindex');
     Route::post('/addCalender/add',[AddcalendarController::class,'store'])->name('addCalender');
+    Route::get('/addCalender/del/{id}',[AddcalendarController::class,'delete'])->name('addCalenderdel');
 
+    Route::get('/addCalender/all2',[AddcalendarController::class,'index2'])->name('addCalenderindex2');
+    Route::post('/addCalender/update/{id}',[AddcalendarController::class,'update'])->name('addCalenderupdate');
+
+
+    Route::post('/addReport',[AddreportController::class,'store'])->name('addReport');
     Route::get('/list',[ListnameController::class,'listname'])->name('listname');
+
+    Route::get('/report',[AddreportController::class,'index'])->name('adminreport');
+
 
 
 
 });
+
+Route::post('/form1',[FromController::class,'index'])->name('form1');
+
+
+
+
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/menu1', function () {
     $users = User::all();
@@ -91,11 +162,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/form1', function () {
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('index',[HomeController::class,'index']);
-    
-
-});
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/menu1', function () {

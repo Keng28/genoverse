@@ -16,31 +16,45 @@
               <div class="col-lg-12 mb-4">
                 <!-- Tables -->
                 <div class="card">                  
-                  
                   <div class="table" data-aos="fade-up">
-                    <table class="table align-items-center table-flush">
+                    <table class="table table-striped table-bordered table-sm ">
                       <thead class="thead-light">
                         <tr>
-                          <th>ชื่อ - สกุล</th>
-                          <th >Report1</th>
-                          <th >Report2</th>
-                          <th >Report3</th>
+                          <th>ลำดับ</th>
+                          <th >ประเภทรายงาน</th>
+                          <th>วันที่อัพโหลด</th>
+                          <th>ผู้อัพโหลด</th>
+                          <th >ดูรายงาน</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>วิศิษฐ์  สุนทร</td>
+                          <td>1</td>
+                          <td>wellness</td>
+                          <td>12/02/21</td>
+                          <td>นายแพทย์ ก</td>
                           <td>
-                            <a class="btn btn-primary" href="doctor-report-1.html" role="button"><i class="bi bi-eye-fill"></i></a>
-                          </td>
-                          <td>
-                            <a class="btn btn-primary" href="doctor-report-1.html" role="button"><i class="bi bi-eye-fill"></i></a>
-                          </td>
-                          <td>
-                            <a class="btn btn-primary" href="doctor-report-1.html" role="button"><i class="bi bi-eye-fill"></i></a>
+                            <a class="btn btn-primary" href="{{url('reportdetail')}}" role="button"><i class="bi bi-eye-fill"></i></a>
                           </td>
                         </tr>
-
+                        <tr>
+                          <td>2</td>
+                          <td>illness</td>
+                          <td>12/02/21</td>
+                          <td>นายแพทย์ ก</td>
+                          <td>
+                            <a class="btn btn-primary" href="{{url('reportdetail')}}" role="button"><i class="bi bi-eye-fill"></i></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Recommenation</td>
+                          <td>12/02/21</td>
+                          <td>นายแพทย์ ก</td>
+                          <td>
+                            <a class="btn btn-primary" href="{{url('reportdetail')}}" role="button"><i class="bi bi-eye-fill"></i></a>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>

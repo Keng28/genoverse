@@ -31,7 +31,7 @@
               <div class="menubody-box blue">
                 <i class="bi bi-headset" style="color: #15be56;"></i>
                 <div>
-                  <a href="{{ asset('user/menu3')}}" class="stretched-link">นัดหมาย/ปรึกษา</a>
+                  <a href="{{ route('addCalenderindex2')}}" class="stretched-link">นัดหมาย/ปรึกษา</a>
                 </div>
               </div>
             </div>
