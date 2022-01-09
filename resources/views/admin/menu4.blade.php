@@ -179,7 +179,7 @@
                           <!-- <td>{{$row->file_path}}</td> -->
                           
                           <td>
-                            <a class="btn btn-primary" href="{{url('/reports/'.$row->id)}}" role="button"><i class="bi bi-eye"></i></a>
+                            <a class="btn btn-primary" href="{{$row->file_path}}" target="_blank" role="button"><i class="bi bi-eye"></i></a>
                             <a class="btn btn-success" href="{{$row->file_path}}" download role="button"><i class="bi bi-box-arrow-in-down"></i></a>
                             <a class="btn btn-danger postbutton1" onclick="test({{$row->id}})" role="button" ><i class="bi bi-archive-fill"></i></a>
 

@@ -26,17 +26,7 @@ use App\Models\ReportType;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::middleware(['check'])->group(function () {
-//     Route::get('/', function () {
-//         return view('auth/login');
-//     }); 
-// });
 
-// Route::middleware(['checkhome'])->group(function () {
-//     Route::get('/index', function () {
-       
-//     }); 
-// });
 
 
 
