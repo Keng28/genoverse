@@ -6,9 +6,9 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="{{ asset('img/genomics.png')}}" alt="">
-        <span>Genome</span>
+      <a href="{{url('/index')}}" class="logo d-flex align-items-center">
+        <img src="{{asset('/img/genomics.png')}}" alt="">
+        <!-- <span>Genobliss</span> -->
       </a>
 
       <nav id="navbar" class="navbar">
@@ -25,7 +25,7 @@
       <div class="container">
 
       <div class="row feture-tabs " data-aos="fade-up">
-        <div class="col-lg-5 align-self-center card " style="background: #F4F2FA; border-width:0">
+        <div class="col-lg-6 align-self-center card " style="background: #F1F5FC; border-width:0">
 
               <div class="box" data-aos="fade-up" data-aos-delay="400">
               @if (session('status'))
@@ -38,7 +38,7 @@
               @csrf
                 <div class="row gy-4">
                 <header class="section-header justify-content-start">
-                <p>Login</p>
+                <p>เข้าสู่ระบบ</p>
               </header>
                 <div class="col-md-12">
                     <input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder="Email" required autofocus>
@@ -46,7 +46,7 @@
 
                 <div class="col-md-12">
                     <input id="password" class="form-control" type="password" name="password" placeholder="Password" required autocomplete="current-password">
-                    <a href="#" class="d-flex flex-row-reverse">Forgot Password</a>
+                    <a href="{{ route('password.request') }}" class="d-flex flex-row-reverse">{{ __('ลืมรหัสผ่าน?') }}</a>
                 </div>
 
 
@@ -59,7 +59,7 @@
 
                 <div class="col-md-12 text-center">
                 <button class="btn btn-primary ">
-                    {{ __('Log in') }}
+                    {{ __('เข้าสู่ระบบ') }}
                 </button>
                 </div>
 
@@ -67,8 +67,8 @@
           
 
                 <div class="col-md-12 text-center">
-                    <a>Don't have an account?</a>
-                    <a href="{{ route('register') }}">Register</a>
+                    <a>ยังไม่มีบัญชี?</a>
+                    <a href="{{ route('register') }}">สมัครเข้าใช้งาน</a>
                 </div>
 
                 </div>
@@ -78,7 +78,7 @@
 
         </div>
 
-        <div class="col-lg-7 hero-img align-self-center">
+        <div class="col-lg-6 hero-img align-self-center">
           <img src="{{ asset('img/hero-img.png')}}" class="img-fluid" alt="">
         </div>
       </div>
@@ -91,20 +91,7 @@
   </main><!-- End #main -->
 
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Keng</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-       
-        Designed by <a href="https://bootstrapmade.com/">Keng</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
+ 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 </x-guest-layout>

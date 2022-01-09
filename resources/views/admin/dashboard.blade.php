@@ -7,31 +7,32 @@
       <div class="row">
         <div class="col-lg-12 d-flex flex-column justify-content-center">
 
-          <div class="row gy-4">
+          <div class="row gy-4 justify-content-center">
   
           <div class="col-lg-3 col-md-6 position-relative">
               <div class="menubody-box blue">
                 <i class="bi bi-emoji-smile"></i>
                 <div>
-                  <a href="{{ route('listname')}}" class="stretched-link">ข้อมูลผู้รับบริการ</a>
+                  <a href="{{ route('listname')}}" class="stretched-link">ข้อมูลผู้รับบริการ
+                  </a>
                 </div>
               </div>
             </div>
   
             <div class="col-lg-3 col-md-6 position-relative">
               <div class="menubody-box blue">
-                <i class="bi bi-headset" style="color: #15be56;"></i>
+                <i class="bi bi-calendar-event" style="color: #15be56;"></i>
                 <div>
-                  <a href="{{ route('addCalenderindex')}}" class="stretched-link">นัดหมาย/ปรึกษา</a>
+                  <a href="{{ route('addCalenderindex')}}" class="stretched-link" style="font-size:18px">นัดหมาย</a>
                 </div>
               </div>
             </div>
   
             <div class="col-lg-3 col-md-6 position-relative">
               <div class="menubody-box blue">
-                <i class="bi bi-people" style="color: #bb0852;"></i>
+                <i class="bi bi-file-earmark-text" style="color: #bb0852;"></i>
                 <div>
-                  <a href="{{ route('adminreport')}}" class="stretched-link">การแปลผล/อัพโหลด</a>
+                  <a href="{{ route('adminreport')}}" class="stretched-link">รายงานผล</a>
                 </div>
               </div>
             </div>

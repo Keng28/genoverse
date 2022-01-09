@@ -13,7 +13,7 @@ class HomeController extends Controller
             return view('admin.dashboard');
         }
         else{
-            return view('user.dashboard');
+            return view('user.menu2');
         }
     }
 

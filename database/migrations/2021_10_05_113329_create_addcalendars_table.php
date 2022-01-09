@@ -18,9 +18,11 @@ class CreateAddcalendarsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('doctor');
             $table->time('time');
+            $table->time('time2');
             $table->date('date');
             $table->string('category');
             $table->string('link');
+            $table->integer('walkin')->nullable();;
             $table->timestamps();
             $table->softDeletes();
 
@@ -36,4 +38,5 @@ class CreateAddcalendarsTable extends Migration
     {
         Schema::dropIfExists('addcalendars');
     }
+    
 }

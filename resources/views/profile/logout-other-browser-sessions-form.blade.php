@@ -1,10 +1,10 @@
 <x-jet-action-section>
     <x-slot name="title">
-        {{ __('Browser Sessions') }}
+        {{ __('เซสชันเบราว์เซอร์') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('อุปกรณ์ที่เข้าใช้งาน') }}
+        
     </x-slot>
 
     <x-slot name="content">
@@ -50,7 +50,7 @@
 
         <div class="flex items-center mt-5">
             <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
-                {{ __('Log Out Other Browser Sessions') }}
+                {{ __('ออกจากระบบเซสชันเบราว์เซอร์อื่น') }}
             </x-jet-button>
 
             <x-jet-action-message class="ml-3" on="loggedOut">

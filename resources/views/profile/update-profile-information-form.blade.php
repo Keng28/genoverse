@@ -1,10 +1,10 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        {{ __('ข้อมูลโปรไฟล์') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('ข้อมูลส่วนตัว') }}
+
     </x-slot>
 
     <x-slot name="form">
@@ -55,7 +55,9 @@
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
+            <br>
+            {{ Auth::user()->name }}
+            <!-- <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" /> -->
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
@@ -65,6 +67,25 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+
+        @if ($this->user->position)
+        <!-- Position -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="email" value="{{ __('Position') }}" />
+            <x-jet-input id="position" type="text" class="mt-1 block w-full" wire:model.defer="state.position" />
+            <x-jet-input-error for="email" class="mt-2" />
+        </div>       
+        @endif
+
+        @if ($this->user->organization)
+        <!-- Under -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="email" value="{{ __('Organization') }}" />
+            <x-jet-input id="organization" type="text" class="mt-1 block w-full" wire:model.defer="state.organization" />
+            <x-jet-input-error for="email" class="mt-2" />
+        </div>
+        @endif
     </x-slot>
 
     <x-slot name="actions">
@@ -73,7 +94,7 @@
         </x-jet-action-message>
 
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
+            {{ __('บันทึก') }}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

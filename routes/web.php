@@ -5,11 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AddcalendarController;
 use App\Http\Controllers\AddreportController;
-use App\Http\Controllers\FromController;
-
-
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\TypereportController;
 use App\Http\Controllers\ListnameController;
+use App\Http\Controllers\PDFController;
+
+use Illuminate\Support\Facades\DB;
+
 use App\Models\User;
+use App\Models\ReportType;
 
 
 /*
@@ -22,14 +26,39 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::middleware(['check'])->group(function () {
+//     Route::get('/', function () {
+//         return view('auth/login');
+//     }); 
+// });
 
-Route::get('/', function () {
-    return view('auth/login');
-});
+// Route::middleware(['checkhome'])->group(function () {
+//     Route::get('/index', function () {
+       
+//     }); 
+// });
+
+
+
+
+
 
 Route::get('/status', function () {
     return view('admin/status');
 });
+
+Route::get('/keng14', function () {
+    Artisan::call('storage:link');
+});
+
+Route::get('/testlayout', function () {
+    return view('testlayout');
+});
+
+
+
+
+
 Route::get('/form1', function () {
     return view('form1');
 });
@@ -57,43 +86,119 @@ Route::get('/form8', function () {
 Route::get('/form9', function () {
     return view('form9');
 });
-Route::get('/form10', function () {
-    return view('form10');
-});
-Route::get('/form11', function () {
-    return view('form11');
-});
-Route::get('/form12', function () {
-    return view('form12');
-});
-Route::get('/form13', function () {
-    return view('form13');
-});
+
+
 
 Route::get('/reportdetail', function () {
     return view('reportdetail');
 });
 
+Route::get('/usercalender', function () {
+    return view('user/menu3')->name('usercalender');
+});
 
-
-
-
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+   
     
-    Route::get('/index',[HomeController::class,'index'])->name('index');
+
+
+
+Route::middleware(['auth:sanctum','verified'])->group(function () {
+
+    Route::middleware(['check'])->group(function () {
+        Route::get('/', function () {
+            return view('auth/login');
+        }); 
+    });
+
+    Route::middleware(['checkhome'])->group(function () {
+        Route::get('/index', function () {
+        
+        }); 
+    });
+
+    // Route::get('/index',[HomeController::class,'index'])->name('index');
 
     Route::get('/addCalender/all',[AddcalendarController::class,'index'])->name('addCalenderindex');
-    Route::post('/addCalender/add',[AddcalendarController::class,'store'])->name('addCalender');
-    Route::get('/addCalender/del/{id}',[AddcalendarController::class,'delete'])->name('addCalenderdel');
+    Route::get('/addCalender/2',[AddcalendarController::class,'index2'])->name('addCalenderindex2');
+    Route::get('/addCalender/3',[AddcalendarController::class,'index3'])->name('addCalenderindex3');
 
-    Route::get('/addCalender/all2',[AddcalendarController::class,'index2'])->name('addCalenderindex2');
+    Route::post('/addCalender/add',[AddcalendarController::class,'store'])->name('addCalender');
+    Route::post('/addCalender/del',[AddcalendarController::class,'delete'])->name('addCalenderdel');
+    Route::post('/addCalenderuser/del',[AddcalendarController::class,'deleteuser'])->name('addCalenderdell');
+
+    //Route::get('/addCalender/del',[AddcalendarController::class,'delete'])->name('addCalenderdel2');
+
     Route::post('/addCalender/update/{id}',[AddcalendarController::class,'update'])->name('addCalenderupdate');
 
 
-    Route::post('/addReport',[AddreportController::class,'store'])->name('addReport');
+    //Route::post('/addReport',[AddreportController::class,'store'])->name('addReport');
+    Route::post('/report/del',[AddreportController::class,'delete'])->name('delReport');
+
+    //Route::post('/addReport',[AddreportController::class,'index'])->name('addReport');
+    Route::post('/addReport/{id}',[AddreportController::class,'store'])->name('addReport2');
+    Route::post('/downloadReport/{id}',[AddreportController::class,'download'])->name('downloadReport');
+
+    //Route::post('/addReport/{id}',[AddreportController::class,'delete'])->name('addReportdel');
     Route::get('/list',[ListnameController::class,'listname'])->name('listname');
 
+    //listuserid
+    Route::get('/status/{id}',[ListnameController::class,'view'])->name('listname2');
+
+
+    Route::get('/questionnaire/{id}',[ListnameController::class,'viewform'])->name('questionnaire');
+
+    Route::get('/details/{id}',[ListnameController::class,'viewformadmin'])->name('details');
+    
+    
+    Route::post('/statusupdate',[ListnameController::class,'update'])->name('statusupdate');
+    Route::post('/statusupdate2',[ListnameController::class,'update2'])->name('statusupdate2');
+    Route::get('/statusdelete/{id}',[ListnameController::class,'delete'])->name('statusdelete');
+
+    //Route::post('/department/add',[DepartmentController::class,'store'])->name('addDepartment');
+
+
+    Route::get('ajax', function(){ return view('ajax'); });
+    Route::post('/postajax',[ListnameController::class,'test'])->name('statusdelete');
+
+
+
     Route::get('/report',[AddreportController::class,'index'])->name('adminreport');
+    Route::get('/report/{id}',[AddreportController::class,'view'])->name('adminreport2');
+
+    Route::get('/reports/{id}',[AddreportController::class,'view2'])->name('adminreport3');
+    Route::get('/reportsuser',[AddreportController::class,'viewuser'])->name('userreport');
+
+
+    //Route::get('/report/{id}',[AddreportController::class,'delete'])->name('adminreportdel');
+    //Route::post('/report/del',[AddreportController::class,'delete'])->name('adminreportdel');
+
+
+    //menu2
+    Route::get('/questionnaireuser',[ListnameController::class,'listname2'])->name('questionnaireuser');
+
+    //Route::get('/userformall/{id}',[FormController::class,'view'])->name('view');
+
+    //calenda
+    //Route::get('/addCalender/cat',[AddcalendarController::class,'index3'])->name('addCalenderindex3');
+
+
+    Route::get('/addCalender/cat',[AddcalendarController::class,'userindex'])->name('addCalenderuser');
+    Route::post('/addCalender/update/{id}',[AddcalendarController::class,'update'])->name('addCalenderuserupdate');
+
+
+    //report type
+    Route::get('/reporttype/all',[TypereportController::class,'index'])->name('allReportType');
+    Route::post('/reporttype/add',[TypereportController::class,'store'])->name('addReportType');
+    Route::get('/reporttype/edit/{id}',[TypereportController::class,'edit']);
+    Route::post('/reporttype/update/{id}',[TypereportController::class,'update']);
+    Route::get('/reporttype/delete/{id}',[TypereportController::class,'delete']);
+
+
+    //report pdf
+    Route::get('/generate-pdf',[PDFController::class,'generatePDF']);
+
+
+    //view report user
 
 
 
@@ -144,9 +249,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/user/menu1', function () 
     return view('user/menu1');
 })->name('menu1');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/user/menu2', function () {
-    return view('user/menu2');
-})->name('menu2');
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/user/menu3', function () {
     return view('user/menu3');
 })->name('menu3');
@@ -194,6 +300,19 @@ Route::patch('/meetings/{id}', 'Zoom\MeetingController@update')->where('id', '[0
 Route::delete('/meetings/{id}', 'Zoom\MeetingController@delete')->where('id', '[0-9]+');
 
 
+//user
+Route::get('/questionnaire2',[ListnameController::class,'listname'])->name('questionnaire2');
 
 
+Route::get('/questionnaire3',[ListnameController::class,'listname2'])->name('questionnaire3');
 
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/user/menu2', function () {
+    return view('user/menu2');
+})->name('menu2');
+
+
+//report
+
+Route::get('/upload-file', [FileUpload::class, 'createForm']);
+Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('fileUpload');

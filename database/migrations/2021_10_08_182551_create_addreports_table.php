@@ -19,6 +19,7 @@ class CreateAddreportsTable extends Migration
             $table->string('file');
             $table->integer('user_id');
             $table->integer('doctor_id');
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

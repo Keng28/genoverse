@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
 
 class CheckAdmin
@@ -19,13 +20,12 @@ class CheckAdmin
     public function handle(Request $request, Closure $next)
     {
 
-        $role=Auth::user()->role;
-        if($role=='1'){
-            return view('admin.dashboard');
+        // dd(Auth::check());
+        if(Auth::check()==false){
+            return response()->view('auth.login');
         }
         else{
-            return view('user.dashboard');
+            return back()->withInput();
         }
-
     }
 }

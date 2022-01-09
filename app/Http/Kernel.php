@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+
+
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -70,6 +72,7 @@ class Kernel extends HttpKernel
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
 
         'check' => \App\Http\Middleware\CheckAdmin::class,
+        'checkhome' => \App\Http\Middleware\CheckHome::class,
 
 
     ];

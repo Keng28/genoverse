@@ -16,6 +16,9 @@ class Form extends Model
         'fill3',
 
     ];
+    public function user(){
+        return $this -> hasOne(User::class,'id','user_id');
+    }
 
 }
 
