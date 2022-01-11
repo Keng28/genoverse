@@ -29,10 +29,10 @@
                                             <th colspan="9">ความสัมพันธ์</th>
                                         </tr>
                                         <tr>
-                                            <td colspan="2">บิดา</td>
-                                            <td colspan="2">มารดา</td>
-                                            <td colspan="2">พี่</td>
-                                            <td colspan="2">น้อง</td>
+                                            <td colspan="2">บิดา/มารดา</td>
+                                            <td colspan="2">พี่/น้อง</td>
+                                            <td colspan="2">ปู่/ย่า</td>
+                                            <td colspan="2">ตา/ยาย</td>
                                             <td rowspan="2">ไม่ทราบ</td>
                                         </tr>
                                         <tr>

@@ -87,7 +87,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions2"
                                         id="inlineRadio4" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">ผู้ท่ีทํางานเสมียน</label>
+                                    <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานเสมียน</label>
                                 </div>
                                 <div class="form-check">
                                     <a>(เช่น เสมียน เลขานุการ)</a>
@@ -104,7 +104,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions2"
                                         id="inlineRadio6" value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">ผู้ท่ีทํางานทางด้านเกษตรกรรม
+                                    <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานทางด้านเกษตรกรรม
                                         ป่าไม้ และประมง</label>
                                 </div>
                                 <div class="form-check">
@@ -154,7 +154,7 @@
                             </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-left-circle-fill"></i>Save</button>
                             </div>
                         </form>
                     </div>
@@ -168,7 +168,7 @@
                         กลับหน้าหลักของแบบประเมิน
                     </button>
                     <button type="button" onclick="window.location.href='{{url('form2')}}'"
-                        class="btn btn-primary">หน้าถัดไป
+                        class="btn btn-primary" >หน้าถัดไป #save
                         <i class="bi bi-arrow-right-circle-fill"></i>
                     </button>
                 </div>
