@@ -89,7 +89,7 @@
                 @endif
 
 
-                <div class="col-md-7" >
+                <div class="col-md-7">
                     <form id="myForm1" class="row" action="{{url('/formupdate8/'.$getbyid[0]->id)}}" method="post">
                         @csrf
                         <div class="col-12">
@@ -110,26 +110,29 @@
                             <label class="form-check-label" for="inlineRadio2">ปัจจุบันกำลังสูบบุหรี่</label>
                             <!-- </div> -->
 
-                            <div class="dvtext1">
+                            <div class="dvtext1 col-md-6">
                                 <div class="row form9-input-text ">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบวันละกี่มวน"
                                             aria-label="สูบวันละกี่มวน" name="quiz8_1_1_1"
                                             value="{{($forms[0]->quiz8_1_1_1)}}">
+                                        <span class="input-group-text" >มวน</span>
                                     </div>
                                 </div>
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบมาได้นานกี่ปี"
                                             aria-label="สูบมาได้นานกี่ปี" name="quiz8_1_1_2"
                                             value="{{($forms[0]->quiz8_1_1_2)}}">
+                                        <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบมาได้นานกี่เดือน"
                                             aria-label="สูบมาได้นานกี่เดือน" name="quiz8_1_1_3"
                                             value="{{($forms[0]->quiz8_1_1_3)}}">
+                                        <span class="input-group-text" >เดือน</span>
                                     </div>
                                 </div>
                             </div>
@@ -142,33 +145,37 @@
                                 {{($forms[0]->quiz8_1 == '3' ?  'checked' : '')}}>
                             <label class="form-check-label" for="inlineRadio2">เคยสูบแต่ปัจจุบันหยุดสูบบุหรี่แล้ว
                             </label>
-                            <div class="dvtext2">
+                            <div class="dvtext2 col-md-6">
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control"
                                             placeholder="ระยะเวลาที่เคยสูบมานานกี่ปี" aria-label="สูบวันละกี่มวน"
                                             name="quiz8_1_2_1" value="{{($forms[0]->quiz8_1_2_1)}}">
+                                            <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control"
                                             placeholder="ระยะเวลาที่เคยสูบมานานกี่เดือน" aria-label="สูบวันละกี่มวน"
                                             name="quiz8_1_2_2" value="{{($forms[0]->quiz8_1_2_2)}}">
+                                            <span class="input-group-text" >เดือน</span>
                                     </div>
                                 </div>
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่ปี"
                                             aria-label="สูบมาได้" name="quiz8_1_2_3"
                                             value="{{($forms[0]->quiz8_1_2_3)}}">
+                                            <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
                                 <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่เดือน"
                                             aria-label="สูบมาได้" name="quiz8_1_2_4"
                                             value="{{($forms[0]->quiz8_1_2_4)}}">
+                                            <span class="input-group-text" >เดือน</span>
                                     </div>
                                 </div>
                             </div>
@@ -190,41 +197,48 @@
                             <input class="form-check-input" type="radio" name="quiz8_2" id="inlineRadio2" value="2"
                                 {{($forms[0]->quiz8_2 == '2' ?  'checked' : '')}}>
                             <label class="form-check-label" for="inlineRadio2">ปัจจุบันกำลังสูบบุหรี่ไฟฟ้า</label>
-                            <div class="dvtext3">
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                            <div class="dvtext3 col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบวันละกี่ครั้ง"
                                             aria-label="สูบวันละกี่มวน" name="quiz8_2_1_1"
                                             value="{{($forms[0]->quiz8_2_1_1)}}">
+                                        <span class="input-group-text" >ครั้ง</span>
+
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบมานานกี่เดือน"
                                             aria-label="สูบมาได้" name="quiz8_2_1_2"
                                             value="{{($forms[0]->quiz8_2_1_2)}}">
+                                        <span class="input-group-text" >เดือน</span>
+
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="สูบมานานกี่ปี"
                                             aria-label="สูบมาได้" name="quiz8_2_1_3"
                                             value="{{($forms[0]->quiz8_2_1_3)}}">
+                                        <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control"
                                             placeholder="น้ำยา 1 หยดใช้ได้นานกี่ชั่วโมง" aria-label="สูบมาได้"
                                             name="quiz8_2_1_4" value="{{($forms[0]->quiz8_2_1_4)}}">
+                                            <span class="input-group-text" >ชั่วโมง</span>
                                     </div>
                                 </div>
 
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="น้ำยา 1 หยดใช้ได้นานกี่วัน"
                                             aria-label="สูบมาได้" name="quiz8_2_1_5"
                                             value="{{($forms[0]->quiz8_2_1_5)}}">
+                                            <span class="input-group-text" >วัน</span>
                                     </div>
                                 </div>
                             </div>
@@ -236,34 +250,38 @@
                             <label class="form-check-label" for="inlineRadio2">
                                 เคยสูบแต่ปัจจุบันหยุดสูบบุหรี่ไฟฟ้าแล้วระยะเวลาที่เคยสูบมานาน
                             </label>
-                            <div class="dvtext4">
+                            <div class="dvtext4 col-md-6">
 
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control"
                                             placeholder="ระยะเวลาที่เคยสูบมานานกี่ปี" aria-label="สูบวันละกี่มวน"
                                             name="quiz8_2_2_1" value="{{($forms[0]->quiz8_2_2_1)}}">
+                                            <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control"
                                             placeholder="ระยะเวลาที่เคยสูบมานานกี่เดือน" aria-label="สูบมาได้"
                                             name="quiz8_2_2_2" value="{{($forms[0]->quiz8_2_2_2)}}">
+                                            <span class="input-group-text" >เดือน</span>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่ปี"
                                             aria-label="สูบมาได้" name="quiz8_2_2_3"
                                             value="{{($forms[0]->quiz8_2_2_3)}}">
+                                            <span class="input-group-text" >ปี</span>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
                                         <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่เดือน"
                                             aria-label="สูบมาได้" name="quiz8_2_2_4"
                                             value="{{($forms[0]->quiz8_2_2_4)}}">
+                                            <span class="input-group-text" >เดือน</span>
                                     </div>
                                 </div>
                             </div>
