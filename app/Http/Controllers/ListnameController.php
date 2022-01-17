@@ -115,9 +115,7 @@ class ListnameController extends Controller
 
     public function viewformadmin($id){
         $Auth = Auth::user();
-        error_log('keng');
         error_log($Auth);
-
         if($Auth->role != 1){
             return view('user.dashboard'); 
         }
@@ -135,9 +133,6 @@ class ListnameController extends Controller
         ->where("users.id",$id)
         ->get();
 
-        //$Auth = Auth::user();
-        
-        //dd($Auth);
         //return view('admin.service.index',compact('services'));
         return view('admin.details',compact(['getstatusall','getbyid']));
     }

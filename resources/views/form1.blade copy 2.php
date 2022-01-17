@@ -1,26 +1,24 @@
 <x-app-layout>
-    <script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-Token': $('meta[name=_token]').attr('content')
-        }
+ <script>
+     $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
     });
     jQuery.ajax({
-        url: '/forms1/{id}',
+        url:'/forms1/{id}',
         type: 'GET',
         data: {
             user_id: 2,
             quiz_1: 2
         },
-        success: function(data) {
+        success: function( data ){
 
             console.log(data);
         },
-        error: function(xhr, b, c) {
+        error: function (xhr, b, c) {
             console.log("xhr=" + xhr + " b=" + b + " c=" + c);
         }
     });
-    </script>
+ </script>
     <section id="userform" class="userform  d-flex align-items-center">
         <div class="container" data-aos="fade-up">
             <header class="section-header d-flex justify-content-between">
@@ -33,11 +31,8 @@
                     <a>ผู้รับบริการ: {{$getbyid[0]->name}}</a>
                 </div>
             </header>
-
+          
             <div class="row d-flex justify-content-center ">
-                @if(session("success"))
-                <div class="alert alert-success">{{session('success')}}</div>
-                @endif
                 <div class="col-md-7 ">
                     <div class="row gy-4 ">
                         <form class="row g-3" action="{{url('/formsupdate1/'.$getbyid[0]->id)}}" method="post">

@@ -22,7 +22,8 @@ class CreateAddcalendarsTable extends Migration
             $table->date('date');
             $table->string('category');
             $table->string('link');
-            $table->integer('walkin')->nullable();;
+            $table->integer('walkin')->nullable();
+            $table->string('note',510)->nullable();
             $table->timestamps();
             $table->softDeletes();
 

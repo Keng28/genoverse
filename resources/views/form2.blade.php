@@ -1,5 +1,12 @@
 <x-app-layout>
     <script type="text/javascript">
+        
+    $("input[type=radio]").on("change", function() {
+        //check if radio is checked and value of checked one is `others`
+        ($(this).val() == "Other") ? $(this).siblings(".dvtext").show(): $(this).siblings(".dvtext").hide()
+    })
+
+
     function show1() {
         document.getElementById('div1').style.display = 'none';
     }
@@ -39,13 +46,19 @@
                 </div>
             </header>
 
-
-
-
-
             <div class="row d-flex justify-content-center ">
                 <div class="col-md-7 ">
                     <div class="row gy-4 ">
+                        <div class="box-text">
+                            <div class="info-box">
+                                <div class="in-line">
+                                    <h3>อาการต่อไปนี้</h3>
+                                    <p>แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                         <form class="row g-3">
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">2.1
@@ -55,10 +68,8 @@
                             <div class="col-12">
                                 <label for="inputAddress"
                                     class="form-label">1.ความดันโลหิตสูง(ความดันในเลือดสูง)</label>
-                                <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+                                <div class="questionnaire" >
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1" onclick="show2();">
@@ -69,7 +80,7 @@
                                             id="inlineRadio2" value="option2" onclick="show1();">
                                         <label class="form-check-label" for="inlineRadio2">ไม่ใช่</label>
                                     </div>
-                                    <div class="title hide" id="div1">
+                                    <div class="title hide" id="div1" style="background-color:powderblue;">
                                         <a>- เริ่มเป็นเมื่อใด(วินิฉัยโดยแพทย์)</a>
                                         <div class="input">
                                             <input type="text" class="form-control" id="inputAddress"
@@ -95,9 +106,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">2.ไขมันในเลือดสูง</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions2"
                                             id="inlineRadio3" value="option3" onclick="show4();">
@@ -135,9 +144,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">3.เบาหวาน</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions3"
                                             id="inlineRadio1" value="option1" onclick="show4();">
@@ -176,9 +183,7 @@
                                 <label for="inputAddress"
                                     class="form-label">4.โรคเส้นเลือดหัวใจตีบ(การอุดตันของเส้นเลือดแดงที่ไปเลี้ยงหัวใจ)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -217,9 +222,7 @@
                                 <label for="inputAddress" class="form-label">5.กล้ามเนื้อหัวใจตาย (ภาวะ
                                     กล้ามเนื้อหัวใจตายเฉียบพลัน)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -256,9 +259,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">6.การทำงานของหัวใจล้มเหลว</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -296,9 +297,7 @@
                                 <label for="inputAddress"
                                     class="form-label">7.เส้นเลือดส่วนปลายตีบ(การอุดตันของเส้นเลือดแดงที่ไปเลี้ยงขา”PAD”)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -335,9 +334,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">8.โรคหลอดเลือดสมอง</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -375,9 +372,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">9.โรคพาร์กินสัน</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -414,9 +409,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">10.โรคลมชัก</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -453,9 +446,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">11.โรคหอบหืด (Asthma)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -492,9 +483,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">12.โรคถุงลมโป่งพอง (COPD)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -531,9 +520,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">13.โรคไต (ที่ไม่ใช่มะเร็ง)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -570,9 +557,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">14.โรคภูมิแพ้(Allergy)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -610,9 +595,7 @@
                                 <label for="inputAddress" class="form-label">15.โรคข้ออักเสบรูมาตอยด์(Rheumatoid
                                     arthritis)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -650,9 +633,7 @@
                                 <label for="inputAddress" class="form-label">16.โรคลูปัส (ภูมิแพ้ต่อตนเอง, systemic
                                     lupuserythematosus SLE)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -689,9 +670,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">17.โรคตับอื่นๆ(ที่ไม่ใช่มะเร็ง)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -728,9 +707,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">18.ตับอักเสบ</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -767,9 +744,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">19.โรคเม็ดเลือดแดงแตก</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -806,9 +781,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">20.โรคโลหิตจํางหรือซีด</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -845,9 +818,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">21.วัณโรค</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -886,9 +857,7 @@
                                     โรคประสาท,
                                     จิตเภท)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -926,9 +895,7 @@
                                 <label for="inputAddress"
                                     class="form-label">23.ท่านเคยได้รับการผ่าตัดเปลี่ยนอวัยวะ</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -965,9 +932,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">24.โรคไทรอยด์(ที่ไม่ใช่มะเร็ง)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -1004,9 +969,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">25.โรคเก้าท์</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -1043,9 +1006,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">26.ท่านเคยมีกระดูกสันหลังยุบ</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -1083,9 +1044,7 @@
                                 <label for="inputAddress" class="form-label">27.โรคข้อเข่าเสื่อม
                                     (osteoarthritis)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -1122,9 +1081,7 @@
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">28.โรคกระดูกพรุน (Osteoporosis)</label>
                                 <div class="questionnaire">
-                                    <div>
-                                        <a>- แพทย์เคยบอกท่านหรือไม่ว่าท่านมีการเจ็บป่วยเหล่านี้</a>
-                                    </div>
+
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
@@ -1261,7 +1218,7 @@
 
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">บันทึก</button>
                             </div>
                         </form>
 

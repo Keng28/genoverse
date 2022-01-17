@@ -132,7 +132,7 @@
 
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">บันทึก</button>
                             </div>
                         </form>
 

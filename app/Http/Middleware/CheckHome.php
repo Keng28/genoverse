@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Illuminate\Support\Facades\Route;
 
 
 class CheckHome
@@ -28,7 +29,8 @@ class CheckHome
 
         }
         if (Auth::check()&&Auth::user()->role == 0) {
-            return response()->view('user.menu2');
+            return redirect(route('questionnaireuser'));
+
         } else {
             return response()->view('auth.login');
         }

@@ -34,6 +34,31 @@
             $('.dvtext5').hide();
         }
 
+        var value6 = $('input[name=quiz8_0]:checked', '#myForm1').val()
+        if (value6 == "2") {
+            $('.dvtext6').show();
+        } else {
+            $('.dvtext6').hide();
+        }
+
+        var value7 = $('input[name=quiz8_0]:checked', '#myForm1').val()
+        if (value7 == "3") {
+            $('.dvtext7').show();
+        } else {
+            $('.dvtext7').hide();
+        }
+
+
+
+        $("input[type=radio][name=quiz8_0]").on("change", function() {
+            ($(this).val() == "2") ? $(this).siblings(".dvtext6").show(): $(this).siblings(
+                ".dvtext6").hide()
+        })
+        $("input[type=radio][name=quiz8_0]").on("change", function() {
+            ($(this).val() == "3") ? $(this).siblings(".dvtext7").show(): $(this).siblings(
+                ".dvtext7").hide()
+        })
+
 
 
         $("input[name=quiz8_1]").on("change", function() {
@@ -83,16 +108,32 @@
                 </div>
             </header>
 
+
+            <!-- <form id="myForm1">
+                <input type="radio" name="quiz8_1" value="somethings">somethings <br />
+                <input type="radio" name="quiz8_1" value="Other" Checked>Other
+                <div class="dvtext3">
+                    <input type="text" class="txtBox" />
+                </div>
+                <br />
+                <input type="radio" name="2" value="somethings">somethings <br />
+                <input type="radio" name="2" value="Other" Checked>Other
+                <div class="dvtext2">
+                    <input type="text" class="txtBox" />
+                </div>
+            </form> -->
+
+
             <div class="row d-flex justify-content-center ">
                 @if(session("success"))
                 <div class="alert alert-success">{{session('success')}}</div>
                 @endif
 
 
-                <div class="col-md-7" >
+                <div class="col-md-7" style="background-color:red">
                     <form id="myForm1" class="row" action="{{url('/formupdate8/'.$getbyid[0]->id)}}" method="post">
                         @csrf
-                        <div class="col-12">
+                        <div class="col-12" style="background-color:green">
                             <label for="inputAddress" class="form-label">8.1 ท่านสูบบุหรี่หรือไม่</label>
                             <br>
 

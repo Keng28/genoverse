@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AddcalendarController;
 use App\Http\Controllers\AddreportController;
-use App\Http\Controllers\FormController;
 use App\Http\Controllers\TypereportController;
 use App\Http\Controllers\ListnameController;
 use App\Http\Controllers\PDFController;
@@ -14,6 +13,13 @@ use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 use App\Models\ReportType;
+
+use App\Http\Controllers\Form1Controller;
+
+use App\Http\Controllers\Form7Controller;
+use App\Http\Controllers\Form8Controller;
+use App\Http\Controllers\Form9Controller;
+
 
 
 /*
@@ -45,13 +51,12 @@ Route::get('/testlayout', function () {
     return view('testlayout');
 });
 
-
-
-
-
-Route::get('/form1', function () {
-    return view('form1');
+Route::get('/note', function () {
+    return view('admin/note');
 });
+
+
+
 Route::get('/form2', function () {
     return view('form2');
 });
@@ -70,12 +75,8 @@ Route::get('/form6', function () {
 Route::get('/form7', function () {
     return view('form7');
 });
-Route::get('/form8', function () {
-    return view('form8');
-});
-Route::get('/form9', function () {
-    return view('form9');
-});
+
+
 
 
 
@@ -102,11 +103,38 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
 
     Route::middleware(['checkhome'])->group(function () {
         Route::get('/index', function () {
-        
         }); 
+
     });
 
+   
+
     // Route::get('/index',[HomeController::class,'index'])->name('index');
+
+    //form1
+    Route::post('/forms1',[Form1Controller::class,'storeForm1'])->name('forms1');
+
+    //form1
+    Route::get('/forms1/{id}',[Form1Controller::class,'updateForm1'])->name('updateform1');    
+    Route::post('/formsupdate1/{id}',[Form1Controller::class,'update2'])->name('update2');
+
+    //form2
+
+
+    //form7
+    Route::get('/form7/{id}',[Form7Controller::class,'store'])->name('storeform8');    
+    Route::post('/formupdate7/{id}',[Form7Controller::class,'update'])->name('updateform8');
+
+    //form8
+    Route::get('/form8/{id}',[Form8Controller::class,'store'])->name('storeform8');    
+    Route::post('/formupdate8/{id}',[Form8Controller::class,'update'])->name('updateform8');
+
+    //form9
+    Route::get('/form9/{id}',[Form9Controller::class,'store'])->name('storeform9');    
+    Route::post('/formupdate9/{id}',[Form9Controller::class,'update'])->name('updateform9');
+
+
+
 
     Route::get('/addCalender/all',[AddcalendarController::class,'index'])->name('addCalenderindex');
     Route::get('/addCalender/2',[AddcalendarController::class,'index2'])->name('addCalenderindex2');
@@ -133,10 +161,11 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
 
     //listuserid
     Route::get('/status/{id}',[ListnameController::class,'view'])->name('listname2');
-
+    
+    Route::get('/note/{id}',[AddcalendarController::class,'viewListNote'])->name('note');
+    Route::get('/noteDetail/{id}',[AddcalendarController::class,'viewNote'])->name('viewNote');
 
     Route::get('/questionnaire/{id}',[ListnameController::class,'viewform'])->name('questionnaire');
-
     Route::get('/details/{id}',[ListnameController::class,'viewformadmin'])->name('details');
     
     
@@ -297,9 +326,7 @@ Route::get('/questionnaire2',[ListnameController::class,'listname'])->name('ques
 Route::get('/questionnaire3',[ListnameController::class,'listname2'])->name('questionnaire3');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/user/menu2', function () {
-    return view('user/menu2');
-})->name('menu2');
+
 
 
 //report

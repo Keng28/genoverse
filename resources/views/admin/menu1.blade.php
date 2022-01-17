@@ -49,9 +49,10 @@
                                                     </td>
                                                     <td>
                                                         <a class="btn btn-secondary"
-                                                            href="{{url('#')}}" role="button"><i
+                                                            href="{{url('/note/'.$row->id)}}" role="button"><i
                                                                 class="bi bi-clock-history"></i></a>
                                                     </td>
+                                                    
                                                 </tr>
                                                 @endforeach
                                             </tbody>

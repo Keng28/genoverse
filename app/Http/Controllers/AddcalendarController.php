@@ -285,6 +285,64 @@ class AddcalendarController extends Controller
         return view('user.menu3',compact(['user','calendar','tmp1','tmp2','tmp3','tmp11','tmp22','tmp33']));
     }
 
+    public function viewListNote($id){
+        $getbyid = DB::table('users')
+        ->select(
+            'users.*',
+        )
+        ->where("users.id",$id)
+        ->get();
+
+        $calendar = DB::table('addcalendars')
+        ->select(
+            'addcalendars.*',
+        )
+        ->where("addcalendars.user_id",$id)
+        ->get();
+
+        //return view('admin.service.index',compact('services'));
+        return view('admin.note',compact(['getbyid','calendar']));
+    }
+
+    public function viewNote($id){
+        $getbyid = DB::table('users')
+        ->select(
+            'users.*',
+        )
+        ->where("users.id",$id)
+        ->get();
+
+   
+        $calendar2 = DB::table("addcalendars")
+        ->leftJoin("users", function($join){
+            $join->on("addcalendars.user_id", "=", "users.id");
+        })
+        ->leftJoin("users as a", function($join){
+            $join->on("addcalendars.doctor", "=", "a.id");
+        })
+        ->where("addcalendars.id",$id)
+        ->select("addcalendars.*","users.name as NameUsers" , "a.name as DoctorUsers")
+        ->get();
+
+
+
+
+
+
+
+        $calendar = DB::table('addcalendars')
+        ->select(
+            'addcalendars.*',
+        )
+        ->where("addcalendars.user_id",$id)
+        ->get();
+
+        //return view('admin.service.index',compact('services'));
+        return view('admin.notedetail',compact(['getbyid','calendar','calendar2']));
+    }
+
+
+
 
     
 }

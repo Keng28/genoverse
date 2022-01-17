@@ -26,13 +26,15 @@
             console.log(id);
             let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
             Swal.fire({
-                title: 'Delete',
-                text: "You won't be able to revert this!",
+                title: 'ลบการนัดหมาย',
+                text: "คุณจะไม่สามารถย้อนกลับได้",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes'
+                cancelButtonText: 'ปิด',
+
+                confirmButtonText: 'ยืนยัน'
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
@@ -72,13 +74,15 @@
         var id = select_id;
 
         Swal.fire({
-            title: 'Change Status',
-            text: "You won't be able to revert this!",
+            title: 'เพิ่มการนัดหมาย',
+            text: "คุณจะไม่สามารถย้อนกลับได้",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes'
+
+            cancelButtonText: 'ยกเลิก',
+            confirmButtonText: 'เพิ่ม'
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -101,7 +105,7 @@
         })
     }
 
- 
+
 
     function selectPopup(flag) {
         console.log('flag', flag);
@@ -163,10 +167,10 @@
                                                             <thead class="thead-light">
                                                                 <tr>
                                                                     <th>No</th>
-                                                                    <th>Date</th>
-                                                                    <th>Start Time</th>
-                                                                    <th>End Time</th>
-                                                                    <th>Select</th>
+                                                                    <th>วันที่</th>
+                                                                    <th>เริ่มเวลา</th>
+                                                                    <th>สิ้นสุดเวลา</th>
+                                                                    <th>เลือกนัด</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -196,10 +200,10 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
+                                                        data-bs-dismiss="modal">ยกเลิก</button>
                                                     <button class="btn btn-primary" type="button"
                                                         onclick="displayRadioValue()">
-                                                        Add
+                                                        เพิ่มนัดหมาย
                                                     </button>
                                                 </div>
                                                 </form>
@@ -229,10 +233,10 @@
                                                             <thead class="thead-light">
                                                                 <tr>
                                                                     <th>No</th>
-                                                                    <th>Date</th>
-                                                                    <th>Start Time</th>
-                                                                    <th>End Time</th>
-                                                                    <th>Select</th>
+                                                                    <th>วันที่</th>
+                                                                    <th>เริ่มเวลา</th>
+                                                                    <th>สิ้นสุดเวลา</th>
+                                                                    <th>เลือกนัด</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -262,10 +266,10 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
+                                                        data-bs-dismiss="modal">ยกเลิก</button>
                                                     <button class="btn btn-primary" type="button"
                                                         onclick="displayRadioValue()">
-                                                        Add
+                                                        เพิ่มนัดหมาย
                                                     </button>
                                                 </div>
                                                 </form>
@@ -295,10 +299,10 @@
                                                             <thead class="thead-light">
                                                                 <tr>
                                                                     <th>No</th>
-                                                                    <th>Date</th>
-                                                                    <th>Start Time</th>
-                                                                    <th>End Time</th>
-                                                                    <th>Select</th>
+                                                                    <th>วันที่</th>
+                                                                    <th>เริ่มเวลา</th>
+                                                                    <th>สิ้นสุดเวลา</th>
+                                                                    <th>เลือกนัด</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -328,10 +332,10 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Close</button>
+                                                        data-bs-dismiss="modal">ยกเลิก</button>
                                                     <button class="btn btn-primary" type="button"
                                                         onclick="displayRadioValue()">
-                                                        Add
+                                                        เพิ่มนัดหมาย
                                                     </button>
                                                 </div>
                                                 </form>
@@ -362,7 +366,7 @@
                                                         @else
                                                         <button type="button" onclick="selectPopup(1)"
                                                             class="btn btn-primary">
-                                                            <i class="bi bi-plus-lg"></i> Add
+                                                            <i class="bi bi-plus-lg"></i> เพิ่มนัดหมาย
                                                         </button>
                                                         @endif
                                                     </td>
@@ -380,7 +384,7 @@
                                                         @else
                                                         @endif
                                                     </td>
-                                                    
+
                                                     <td>
                                                         @if($tmp11)
                                                         <a class="btn btn-primary" href="{{$tmp1->link}}"
@@ -388,9 +392,9 @@
                                                         <a class="btn btn-danger  ondel" value="{{$tmp1->id}}"
                                                             role="button"><i class="bi bi-archive-fill"></i>
                                                         </a>
-                                                         @endif
+                                                        @endif
                                                     </td>
-                                                   
+
 
 
                                                 </tr>
@@ -403,7 +407,7 @@
                                                         @else
                                                         <button type="button" onclick="selectPopup(2)"
                                                             class="btn btn-primary">
-                                                            <i class="bi bi-plus-lg"></i> Add
+                                                            <i class="bi bi-plus-lg"></i> เพิ่มนัดหมาย
                                                         </button>
                                                         @endif
                                                     </td>
@@ -425,11 +429,12 @@
                                                     </td>
                                                     <td>
                                                         @if($tmp22)
-                                                        
+
                                                         <a class="btn btn-primary" href="{{$tmp2->link}}"
                                                             role="button"><i class="bi bi-telephone-fill"></i></a>
-                                                        <a class="btn btn-danger postbutton3 ondel" value="{{$tmp2->id}}"
-                                                            role="button"><i class="bi bi-archive-fill"></i>
+                                                        <a class="btn btn-danger postbutton3 ondel"
+                                                            value="{{$tmp2->id}}" role="button"><i
+                                                                class="bi bi-archive-fill"></i>
                                                         </a>
                                                     </td>
                                                     @endif
@@ -444,7 +449,7 @@
                                                         @else
                                                         <button type="button" onclick="selectPopup(3)"
                                                             class="btn btn-primary">
-                                                            <i class="bi bi-plus-lg"></i> Add
+                                                            <i class="bi bi-plus-lg"></i> เพิ่มนัดหมาย
                                                         </button>
                                                         @endif
                                                     </td>
@@ -469,8 +474,9 @@
                                                         @if($tmp33)
                                                         <a class="btn btn-primary" href="{{$tmp3->link}}"
                                                             role="button"><i class="bi bi-telephone-fill"></i></a>
-                                                        <a class="btn btn-danger postbutton3 ondel" value="{{$tmp3->id}}"
-                                                            role="button"><i class="bi bi-archive-fill"></i>
+                                                        <a class="btn btn-danger postbutton3 ondel"
+                                                            value="{{$tmp3->id}}" role="button"><i
+                                                                class="bi bi-archive-fill"></i>
                                                         </a>
                                                     </td>
                                                     @endif

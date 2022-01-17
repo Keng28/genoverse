@@ -23,6 +23,7 @@ class Addcalendar extends Model
         'time2',
         'doctor',
         'link',
+        'note',
         'category',
         'walkin',
     ];

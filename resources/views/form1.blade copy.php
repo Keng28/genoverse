@@ -1,26 +1,47 @@
 <x-app-layout>
-    <script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-Token': $('meta[name=_token]').attr('content')
-        }
-    });
-    jQuery.ajax({
-        url: '/forms1/{id}',
-        type: 'GET',
-        data: {
-            user_id: 2,
-            quiz_1: 2
-        },
-        success: function(data) {
 
-            console.log(data);
-        },
-        error: function(xhr, b, c) {
-            console.log("xhr=" + xhr + " b=" + b + " c=" + c);
-        }
+    <script>
+    $(document).ready(function() {
+        $(".createData").click(function() {
+
+            let category = document.getElementById('category').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let time2 = document.getElementById('time2').value;
+            let link = document.getElementById('link').value;
+            let walkin = $('input[name=walkin]:checked', '#myRadioGroup').val();
+
+            let payload = {
+                category:  'kkk',
+                date: date,
+                time: time,
+                time2: time2,
+                link: link,
+                walkin: category == "Post-test Counseling" ? walkin : null,
+            }
+            let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                /* the route pointing to the post function */
+                url: '/addCalender/add',
+                type: 'POST',
+                /* send the csrf-token and the input to the controller */
+                data: {
+                    _token: CSRF_TOKEN,
+                    ...payload
+                },
+                dataType: 'JSON',
+                /* remind that 'data' is the response of the AjaxController */
+                success: function(data) {
+                    $(".writeinfo").append(data.msg);
+                    location.reload();
+                }
+            });
+        });
+
     });
     </script>
+
     <section id="userform" class="userform  d-flex align-items-center">
         <div class="container" data-aos="fade-up">
             <header class="section-header d-flex justify-content-between">
@@ -30,24 +51,21 @@
                     <h3>ข้อมูลส่วนบุคคล</h3>
                 </div>
                 <div>
-                    <a>ผู้รับบริการ: {{$getbyid[0]->name}}</a>
+                    <a>User_ID: ....</a>
                 </div>
             </header>
 
             <div class="row d-flex justify-content-center ">
-                @if(session("success"))
-                <div class="alert alert-success">{{session('success')}}</div>
-                @endif
                 <div class="col-md-7 ">
                     <div class="row gy-4 ">
-                        <form class="row g-3" action="{{url('/formsupdate1/'.$getbyid[0]->id)}}" method="post">
+                        <form class="row g-3" action="{{route('forms1')}}" method="post">
                             @csrf
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">1.1 สถานภาพทางสังคมในปัจจุบัน</label>
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_1" id="inlineRadio1"
-                                        value="1" {{($forms1[0]->quiz_1 == '1' ?  'checked' : '')}}>
+                                        value="1">
                                     <label class="form-check-label" for="inlineRadio1">โสด</label>
                                 </div>
 
@@ -56,25 +74,25 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_1" id="inlineRadio2"
-                                        value="2" {{(($forms1[0]->quiz_1) == '2' ?  'checked' : '') }}>
+                                        value="2">
                                     <label class="form-check-label" for="inlineRadio2">สมรส</label>
                                 </div>
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_1" id="inlineRadio2"
-                                        value="3" {{(($forms1[0]->quiz_1) == '3' ?  'checked' : ''),TRUE }}>
+                                        value="3">
                                     <label class="form-check-label" for="inlineRadio2">หม้าย</label>
                                 </div>
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_1" id="inlineRadio2"
-                                        value="4" {{(($forms1[0]->quiz_1) == '4' ?  'checked' : ''),TRUE }}>
+                                        value="4">
                                     <label class="form-check-label" for="inlineRadio2">แยกกันอยู่/เลิก/หย่า</label>
                                 </div>
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_1" id="inlineRadio2"
-                                        value="5" {{(($forms1[0]->quiz_1) == '5' ?  'checked' : '') ,TRUE}}>
+                                        value="5">
                                     <label class="form-check-label" for="inlineRadio2">อาศัยอยู่ด้วยกัน</label>
                                 </div>
                                 <div class="form-check">
@@ -88,7 +106,7 @@
                                 <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio1"
-                                        value="1" {{($forms1[0]->quiz_2) == '1' ? 'checked' : '' }}>
+                                        value="1">
                                     <label class="form-check-label" for="inlineRadio1">ผู้จัดการ</label>
                                 </div>
                                 <div class="form-check">
@@ -97,7 +115,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio2"
-                                        value="2" {{($forms1[0]->quiz_2) == '2' ? 'checked' : '' }}>
+                                        value="2">
                                     <label class="form-check-label" for="inlineRadio2">วิชาชีพ</label>
                                 </div>
                                 <div class="form-check">
@@ -105,7 +123,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio3"
-                                        value="3" {{($forms1[0]->quiz_2) == '3' ? 'checked' : '' }}>
+                                        value="3">
                                     <label class="form-check-label" for="inlineRadio2">เจ้าหน้าที่เทคนิค</label>
                                 </div>
                                 <div class="form-check">
@@ -113,7 +131,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio4"
-                                        value="4" {{($forms1[0]->quiz_2) == '4' ? 'checked' : '' }}>
+                                        value="4">
                                     <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานเสมียน</label>
                                 </div>
                                 <div class="form-check">
@@ -121,7 +139,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio5"
-                                        value="5" {{($forms1[0]->quiz_2) == '5' ? 'checked' : '' }}>
+                                        value="5">
                                     <label class="form-check-label" for="inlineRadio2">ผู้ที่ทํางานบริการ
                                         และงานขาย</label>
                                 </div>
@@ -130,7 +148,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio6"
-                                        value="6" {{($forms1[0]->quiz_2) == '6' ? 'checked' : '' }}>
+                                        value="6">
                                     <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานทางด้านเกษตรกรรม
                                         ป่าไม้ และประมง</label>
                                 </div>
@@ -139,7 +157,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio7"
-                                        value="7" {{($forms1[0]->quiz_2) == '7' ? 'checked' : '' }}>
+                                        value="7">
                                     <label class="form-check-label"
                                         for="inlineRadio2">ผู้ที่ทำงานเกี่ยวกับงานฝีมือและการค้า</label>
                                 </div>
@@ -148,7 +166,7 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio8"
-                                        value="8" {{($forms1[0]->quiz_2) == '8' ? 'checked' : '' }}>
+                                        value="8">
                                     <label class="form-check-label" for="inlineRadio2">แรงงานในโรงงาน</label>
                                 </div>
                                 <div class="form-check">
@@ -157,7 +175,7 @@
 
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio9"
-                                        value="9" {{($forms1[0]->quiz_2) == '9' ? 'checked' : '' }}>
+                                        value="9">
                                     <label class="form-check-label" for="inlineRadio2">ทหารและตํารวจ</label>
                                 </div>
 
@@ -165,7 +183,7 @@
 
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio10"
-                                        value="10" {{($forms1[0]->quiz_2) == '10' ? 'checked' : '' }}>
+                                        value="10">
                                     <label class="form-check-label" for="inlineRadio2">งานที่ใช้ทักษะขั้นพื้นฐาน</label>
                                 </div>
                                 <div class="form-check">
@@ -174,9 +192,9 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio11"
-                                        value="11" {{($forms1[0]->quiz_2) == '11' ? 'checked' : '' }}>
-                                    <input type="text" name="quiz_2_1" class="form-control" placeholder="อื่นๆ โปรดระบุ"
-                                        aria-label="โปรดระบุ" value="{{($forms1[0]->quiz_2_1)}}">
+                                        value="option2">
+                                    <input type="text" class="form-control" placeholder="อื่นๆ โปรดระบุ"
+                                        aria-label="โปรดระบุ">
                                 </div>
                             </div>
 

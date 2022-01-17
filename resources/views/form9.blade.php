@@ -9,11 +9,14 @@
                     <h3>ความเครียด</h3>
                 </div>
                 <div>
-                    <a>User_ID: ....</a>
+                    <a>ผู้รับบริการ: {{$getbyid[0]->name}}</a>
                 </div>
             </header>
 
             <div class="row d-flex justify-content-center ">
+                @if(session("success"))
+                <div class="alert alert-success">{{session('success')}}</div>
+                @endif
                 <div class="col-md-7 ">
                     <div class="row gy-4 ">
                         <div class="box-text">
@@ -30,32 +33,33 @@
                                     </p>
                                 </div>
                             </div>
-                            <form class="row g-3">
+                            <form class="row g-3" action="{{url('/formupdate9/'.$getbyid[0]->id)}}" method="post">
+                                @csrf
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">9.1
                                         ท่านเคยรู้สึกเครียดบ่อยแค่ไหนในที่ทำงานในช่วง 12 เดือนที่ผ่านมา</label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="quiz9_1" id="quiz9_1"
+                                            value="1" {{($forms[0]->quiz9_1 == '1' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio1">เครียดตลอด</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_1" id="quiz9_1"
+                                            value="2" {{($forms[0]->quiz9_1 == '2' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เครียดหลายๆครั้ง</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_1" id="quiz9_1"
+                                            value="3" {{($forms[0]->quiz9_1 == '3' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เครียดบางเวลา</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_1" id="quiz9_1"
+                                            value="4" {{($forms[0]->quiz9_1 == '4' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ไม่เคยเครียด</label>
                                     </div>
                                 </div>
@@ -64,26 +68,26 @@
                                         ท่านเคยรู้สึกเครียดบ่อยแค่ไหนที่บ้านในช่วง 12 เดือนที่ผ่านมา</label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="quiz9_2" id="quiz9_2"
+                                            value="1" {{($forms[0]->quiz9_1 == '1' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio1">เครียดตลอด</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_2" id="quiz9_2"
+                                            value="2" {{($forms[0]->quiz9_2 == '2' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เครียดหลายๆครั้ง</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_2" id="quiz9_2"
+                                            value="3" {{($forms[0]->quiz9_2 == '3' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เครียดบางเวลา</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_2" id="quiz9_2"
+                                            value="4" {{($forms[0]->quiz9_2 == '4' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ไม่เคยเครียด</label>
                                     </div>
                                 </div>
@@ -92,26 +96,26 @@
                                         ท่านมีความเครียดทางการเงินระดับไหน</label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="quiz9_3" id="quiz9_3"
+                                            value="1" {{($forms[0]->quiz9_3 == '1' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio1">ระดับสูง/รุนแรง</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_3" id="quiz9_3"
+                                            value="2" {{($forms[0]->quiz9_3 == '2' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ปานกลาง</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_3" id="quiz9_3"
+                                            value="3" {{($forms[0]->quiz9_3 == '3' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เล็กน้อย</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_3" id="quiz9_3"
+                                            value="4" {{($forms[0]->quiz9_3 == '4' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ไม่มีเลย</label>
                                     </div>
                                 </div>
@@ -121,45 +125,47 @@
                                         ในวันทำงานของท่าน</label>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="1" {{($forms[0]->quiz9_4 == '1' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio1">ไม่ตรง
                                             หรือไม่เข้ากับคำถาม</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="2" {{($forms[0]->quiz9_4 == '2' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">สมบูรณ์</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="3" {{($forms[0]->quiz9_4 == '3' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ระดับมากพอสมควร</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="4" {{($forms[0]->quiz9_4 == '4' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ปานกลาง</label>
                                     </div>
                                     <br>
 
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="5" {{($forms[0]->quiz9_4 == '5' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">เล็กน้อย</label>
                                     </div>
                                     <br>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
+                                            value="6" {{($forms[0]->quiz9_4 == '6' ?  'checked' : '')}}>
                                         <label class="form-check-label" for="inlineRadio2">ไม่มีเลย</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i>
+                                        บันทึก
+                                    </button>
                                 </div>
                             </form>
                         </div>

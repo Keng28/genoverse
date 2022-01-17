@@ -19,7 +19,7 @@
                     <div class="row gy-4 ">
                         <form class="row g-3">
                             <div class="col-12">
-                                 <label for="inputAddress" class="form-label">
+                                <label for="inputAddress" class="form-label">
                                     4.1 ท่านเคยเป็นอัมพาต หรือ อัมพฤกษ์ หรือไม่</label>
                             </div>
 
@@ -29,9 +29,14 @@
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">ไม่เคย</label>
                                 </div>
-                                ถ้าไม่เคยเป็นอัมพาต หรืออมั พฤกษ์ ท่ํานเคยมีอํากํารใดต่อไปน้ี ที่เกิดขึ้นแบบทันทีทันใด
-                                หรอื ภํายใน 1 วัน (ตอบได้มํากกว่ํา 1 อย่ําง)
+
                                 <div class="form-check">
+                                    <p>
+                                        ถ้าไม่เคยเป็นอัมพาต หรืออัมพฤกษ์ ท่านเคยมีอาการใดต่อไปน้ี
+                                        ที่เกิดขึ้นแบบทันทีทันใด
+                                        หรือ ภายใน 1 วัน (ตอบได้มากกว่า 1 อย่าง)
+                                    </p>
+
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         1. แขนขาข้างใดข้างหนึ่งอ่อนแรง
@@ -66,12 +71,7 @@
                                     </label>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        2. ชาไม่รู้สึกด้านใดด้านหนึ่งของร่างกาย
-                                    </label>
-                                </div>
+                               
 
                                 <div class="col-12">
                                     <label class="form-check-label" for="inlineRadio1">ถ้ามี เป็นเมื่อไร</label><br>
@@ -83,16 +83,16 @@
                                     <input type="text" class="form-control" id="inputAddress" placeholder="ตอนอายุ">
                                 </div>
 
-                               
+
                             </div>
 
-                               <div class="col-12">
+                            <div class="col-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">เคย</label>
                                 </div>
-                              
+
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
@@ -128,13 +128,7 @@
                                     </label>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        2. ชาไม่รู้สึกด้านใดด้านหนึ่งของร่างกาย
-                                    </label>
-                                </div>
-
+                            
                                 <div class="col-12">
                                     <label class="form-check-label" for="inlineRadio1">ถ้ามี เป็นเมื่อไร</label><br>
                                     <input type="text" class="form-control" id="inputAddress" placeholder="ปี พ.ศ.">
@@ -145,19 +139,18 @@
                                     <input type="text" class="form-control" id="inputAddress" placeholder="ตอนอายุ">
                                 </div>
 
-                                
+
                             </div>
-                            
+
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">บันทึก</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <br>
                 <div class="d-flex justify-content-between g-3">
-                    <button type="button" onclick="window.location.href='{{url('/index')}}'"
-                        class="btn btn-primary">
+                    <button type="button" onclick="window.location.href='{{url('/index')}}'" class="btn btn-primary">
                         <i class="bi bi-arrow-left-circle-fill"></i>
                         กลับหน้าหลักของแบบประเมิน
                     </button>

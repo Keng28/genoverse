@@ -37,7 +37,7 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 1</p>
-                                            <a href="{{route('form1')}}" class="stretched-link">ข้อมูลส่วนบุคคล</a>
+                                            <a href="{{url('/forms1/'.$getbyid[0]->id)}}" class="stretched-link">ข้อมูลส่วนบุคคล</a>
                                         </div>
                                         <img src="{{asset('/img/user.png')}}" width="80" alt="">
                                     </div>
@@ -143,7 +143,7 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 7</p>
-                                            <a href="{{url('form7')}}" class="stretched-link">ประวัติครอบครัว</a>
+                                            <a href="{{url('/form7/'.$getbyid[0]->id)}}" class="stretched-link">ประวัติครอบครัว</a>
                                         </div>
                                         <img src="{{asset('/img/family.png')}}" width="80" alt="">
                                     </div>
@@ -160,7 +160,7 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 8</p>
-                                            <a href="{{url('form8')}}" class="stretched-link">การสูบบุหรี่
+                                            <a href="{{url('/form8/'.$getbyid[0]->id)}}" class="stretched-link">การสูบบุหรี่
                                                 และเครื่องดื่มแอลกอฮอล์</a>
                                         </div>
                                         <img src="{{asset('/img/cigarettes.png')}}" width="80" alt="">
@@ -178,7 +178,7 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 9</p>
-                                            <a href="{{url('form9')}}" class="stretched-link">ความเครียด</a>
+                                            <a href="{{url('/form9/'.$getbyid[0]->id)}}" class="stretched-link">ความเครียด</a>
                                         </div>
                                         <img src="{{asset('/img/headache.png')}}" width="80" alt="" cla>
                                     </div>

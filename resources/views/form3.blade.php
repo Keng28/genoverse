@@ -19,19 +19,21 @@
                     <div class="row gy-4 ">
                         <form class="row g-3">
                             <div class="col-12">
-                                <label for="inputAddress" class="form-label">1.
-                                    มีญาติที่มีสายเลือดเดียวกันกับท่านเป็นโรคมะเร็ง(ชนิดใดก็ได้)
-                                    บ้างหรืออไม่</label><br>
+                                <label for="inputAddress" class="form-label">3.1
+                                    มีญาติที่มีสายเลือดเดียวกันกับท่านเป็นโรคมะเร็ง (ชนิดใดก็ได้)
+                                    บ้างหรือไม่</label><br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">ไม่มี</label>
                                 </div>
+                                <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">ไม่แน่ใจ</label>
                                 </div>
+                                <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
@@ -50,12 +52,13 @@
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">ไม่เคย</label>
                                 </div>
+                                <br>
 
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">มี
-                                        ถ้ามีโปรดระบุรายละเอียดด้านล่าง</label>
+                                    <label class="form-check-label" for="inlineRadio1">เคย 
+                                        โปรดระบุรายละเอียด</label>
                                 </div>
                                 <input type="text" class="form-control" id="inputAddress"
                                     placeholder="ชนิดของมะเร็งที่เป็น">
@@ -111,7 +114,7 @@
 
 
                             <div class="col-12">
-                                <label for="inputAddress" class="form-label">การรักษาท่ีได้รับ (ตอบได้มากกว่า 1
+                                <label for="inputAddress" class="form-label">การรักษาที่ได้รับ (ตอบได้มากกว่า 1
                                     อย่าง)</label>
 
                                 <div class="form-check">
@@ -146,11 +149,14 @@
                                     <input type="text" class="form-control" id="inputAddress" placeholder="โปรดระบุ">
 
                                 </div>
+
+                                <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
                                     <label class="form-check-label" for="inlineRadio1">ยังเป็นอยู่</label>
                                 </div>
+                                <br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                         id="inlineRadio1" value="option1">
@@ -240,7 +246,7 @@
                                 <input type="text" class="form-control" id="inputAddress" placeholder="โปรดระบุ">
                             </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="submit" class="btn btn-primary">บันทึก</button>
                             </div>
                         </form>
                     </div>

@@ -2711,7 +2711,8 @@ section {
 }
 
 .userform .form9-input-text{
-  margin-top: .5em;
+  /* margin-top: .5em; */
+  margin: 15px 0px 15px 15px;
 }
 
 .userform .questionnaire a{
@@ -2861,6 +2862,14 @@ section {
   color: #0d187a;
   text-align: left;
 }
+
+.userform .something td{
+    width: 90px;
+    background: #000;
+}
+
+
+
 
 
 
