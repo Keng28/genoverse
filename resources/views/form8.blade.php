@@ -116,23 +116,24 @@
                                         <input type="text" class="form-control" placeholder="สูบวันละกี่มวน"
                                             aria-label="สูบวันละกี่มวน" name="quiz8_1_1_1"
                                             value="{{($forms[0]->quiz8_1_1_1)}}">
-                                        <span class="input-group-text" >มวน</span>
+                                        <span class="input-group-text">มวน</span>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
+
+                                <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="สูบมาได้นานกี่ปี"
-                                            aria-label="สูบมาได้นานกี่ปี" name="quiz8_1_1_2"
+                                        <input type="text" class="form-control width" placeholder="สูบมาได้นานเท่าใด"
+                                            aria-label="สูบมาได้นานเท่าใด" name="quiz8_1_1_2"
                                             value="{{($forms[0]->quiz8_1_1_2)}}">
-                                        <span class="input-group-text" >ปี</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="สูบมาได้นานกี่เดือน"
-                                            aria-label="สูบมาได้นานกี่เดือน" name="quiz8_1_1_3"
-                                            value="{{($forms[0]->quiz8_1_1_3)}}">
-                                        <span class="input-group-text" >เดือน</span>
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            id="inputGroupSelect01" name="quiz8_1_1_3">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_1_1_3 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_1_1_3 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -146,36 +147,39 @@
                             <label class="form-check-label" for="inlineRadio2">เคยสูบแต่ปัจจุบันหยุดสูบบุหรี่แล้ว
                             </label>
                             <div class="dvtext2 col-md-6">
-                                <div class="row form9-input-text">
+
+                                <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="ระยะเวลาที่เคยสูบมานานกี่ปี" aria-label="สูบวันละกี่มวน"
-                                            name="quiz8_1_2_1" value="{{($forms[0]->quiz8_1_2_1)}}">
-                                            <span class="input-group-text" >ปี</span>
+                                        <input type="text" class="form-control width"
+                                            placeholder="ระยะเวลาที่เคยสูบมานานเท่าใด"
+                                            aria-label="ระยะเวลาที่เคยสูบมานานเท่าใด" name="quiz8_1_2_1"
+                                            value="{{($forms[0]->quiz8_1_2_1)}}">
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_1_2_2">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_1_2_2 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_1_2_2 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="row form9-input-text">
+
+                                <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="ระยะเวลาที่เคยสูบมานานกี่เดือน" aria-label="สูบวันละกี่มวน"
-                                            name="quiz8_1_2_2" value="{{($forms[0]->quiz8_1_2_2)}}">
-                                            <span class="input-group-text" >เดือน</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่ปี"
-                                            aria-label="สูบมาได้" name="quiz8_1_2_3"
+                                        <input type="text" class="form-control width" placeholder="หยุดสูบมานานเท่าใด"
+                                            aria-label="หยุดสูบมานานเท่าใด" name="quiz8_1_2_3"
                                             value="{{($forms[0]->quiz8_1_2_3)}}">
-                                            <span class="input-group-text" >ปี</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่เดือน"
-                                            aria-label="สูบมาได้" name="quiz8_1_2_4"
-                                            value="{{($forms[0]->quiz8_1_2_4)}}">
-                                            <span class="input-group-text" >เดือน</span>
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_1_2_4">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_1_2_4 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_1_2_4 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -203,42 +207,43 @@
                                         <input type="text" class="form-control" placeholder="สูบวันละกี่ครั้ง"
                                             aria-label="สูบวันละกี่มวน" name="quiz8_2_1_1"
                                             value="{{($forms[0]->quiz8_2_1_1)}}">
-                                        <span class="input-group-text" >ครั้ง</span>
+                                        <span class="input-group-text">ครั้ง</span>
 
                                     </div>
                                 </div>
+
                                 <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="สูบมานานกี่เดือน"
-                                            aria-label="สูบมาได้" name="quiz8_2_1_2"
+                                        <input type="text" class="form-control width" placeholder="สูบมาได้นานเท่าใด"
+                                            aria-label="สูบมาได้นานเท่าใด" name="quiz8_2_1_2"
                                             value="{{($forms[0]->quiz8_2_1_2)}}">
-                                        <span class="input-group-text" >เดือน</span>
-
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text ">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="สูบมานานกี่ปี"
-                                            aria-label="สูบมาได้" name="quiz8_2_1_3"
-                                            value="{{($forms[0]->quiz8_2_1_3)}}">
-                                        <span class="input-group-text" >ปี</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text ">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="น้ำยา 1 หยดใช้ได้นานกี่ชั่วโมง" aria-label="สูบมาได้"
-                                            name="quiz8_2_1_4" value="{{($forms[0]->quiz8_2_1_4)}}">
-                                            <span class="input-group-text" >ชั่วโมง</span>
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_2_1_3">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_2_1_3 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_2_1_3 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="น้ำยา 1 หยดใช้ได้นานกี่วัน"
-                                            aria-label="สูบมาได้" name="quiz8_2_1_5"
-                                            value="{{($forms[0]->quiz8_2_1_5)}}">
-                                            <span class="input-group-text" >วัน</span>
+                                        <input type="text" class="form-control width"
+                                            placeholder="น้ำยา 1 หยดใช้ได้นานเท่าใด"
+                                            aria-label="น้ำยา 1 หยดใช้ได้นานเท่าใด" name="quiz8_2_1_4"
+                                            value="{{($forms[0]->quiz8_2_1_4)}}">
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_2_1_5">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="ชั่วโมง"
+                                                {{($forms[0]->quiz8_2_1_5 == 'ชั่วโมง' ?  'selected' : '')}}>ชั่วโมง
+                                            </option>
+                                            <option value="วัน"
+                                                {{($forms[0]->quiz8_2_1_5 == 'วัน' ?  'selected' : '')}}>วัน</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -248,40 +253,41 @@
                             <input class="form-check-input" type="radio" name="quiz8_2" id="inlineRadio2" value="3"
                                 {{($forms[0]->quiz8_2 == '3' ?  'checked' : '')}}>
                             <label class="form-check-label" for="inlineRadio2">
-                                เคยสูบแต่ปัจจุบันหยุดสูบบุหรี่ไฟฟ้าแล้วระยะเวลาที่เคยสูบมานาน
+                                เคยสูบแต่ปัจจุบันหยุดสูบบุหรี่ไฟฟ้าแล้ว
                             </label>
                             <div class="dvtext4 col-md-6">
+                                <div class="row form9-input-text ">
+                                    <div class="col-md-6 input-group">
+                                        <input type="text" class="form-control width"
+                                            placeholder="ระยะเวลาที่เคยสูบมานานเท่าใด"
+                                            aria-label="ระยะเวลาที่เคยสูบมานานเท่าใด" name="quiz8_2_2_1"
+                                            value="{{($forms[0]->quiz8_2_2_1)}}">
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_2_2_2">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_2_2_2 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_2_2_2 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="row form9-input-text ">
                                     <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="ระยะเวลาที่เคยสูบมานานกี่ปี" aria-label="สูบวันละกี่มวน"
-                                            name="quiz8_2_2_1" value="{{($forms[0]->quiz8_2_2_1)}}">
-                                            <span class="input-group-text" >ปี</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text ">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control"
-                                            placeholder="ระยะเวลาที่เคยสูบมานานกี่เดือน" aria-label="สูบมาได้"
-                                            name="quiz8_2_2_2" value="{{($forms[0]->quiz8_2_2_2)}}">
-                                            <span class="input-group-text" >เดือน</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text ">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่ปี"
-                                            aria-label="สูบมาได้" name="quiz8_2_2_3"
+                                        <input type="text" class="form-control width" placeholder="หยุดสูบมานานเท่าใด"
+                                            aria-label="หยุดสูบมานานเท่าใด" name="quiz8_2_2_3"
                                             value="{{($forms[0]->quiz8_2_2_3)}}">
-                                            <span class="input-group-text" >ปี</span>
-                                    </div>
-                                </div>
-                                <div class="row form9-input-text ">
-                                    <div class="col-md-6 input-group">
-                                        <input type="text" class="form-control" placeholder="หยุดสูบมานานกี่เดือน"
-                                            aria-label="สูบมาได้" name="quiz8_2_2_4"
-                                            value="{{($forms[0]->quiz8_2_2_4)}}">
-                                            <span class="input-group-text" >เดือน</span>
+                                        <select class="form-select btn btn-outline-secondary dropdown-toggle "
+                                            name="quiz8_2_2_4">
+                                            <option>กรุณาเลือก</option>
+                                            <option value="เดือน"
+                                                {{($forms[0]->quiz8_2_2_4 == 'เดือน' ?  'selected' : '')}}>เดือน
+                                            </option>
+                                            <option value="ปี" {{($forms[0]->quiz8_2_2_4 == 'ปี' ?  'selected' : '')}}>
+                                                ปี</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +318,8 @@
                             <input class="form-check-input" type="radio" name="quiz8_3" id="inlineRadio2" value="4"
                                 {{($forms[0]->quiz8_3 == '4' ?  'checked' : '')}}>
                             <label class="form-check-label"
-                                for="inlineRadio2">ปัจจุบันนี้ท่านดื่มเครื่องดื่มแอลกอฮอล์เกือบทุกวัน(อย่างน้อยสัปดาห์ละครั้ง)</label>
+                                for="inlineRadio2">ปัจจุบันนี้ท่านดื่มเครื่องดื่มแอลกอฮอล์เกือบทุกวัน
+                                (อย่างน้อยสัปดาห์ละครั้ง)</label>
 
                             <div class="dvtext5 form9-input-text">
 
@@ -373,7 +380,7 @@
 
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">8.3.4
-                                        จำนวนความถี่ในการดื่มอลกอฮอล์ของท่าน</label>
+                                        จำนวนความถี่ในการดื่มแอลกอฮอล์ของท่าน</label>
                                     <br>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="quiz8_3_4" id="inlineRadio1"
@@ -417,9 +424,9 @@
             <div class="d-flex justify-content-between g-3">
                 <button type="button" onclick="window.location.href='{{url('/index')}}'" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle-fill"></i>
-                    กลับหน้าหลักของแบบประเมิน
+                    กลับหน้าหลักของแบบสอบถาม
                 </button>
-                <button type="button" onclick="window.location.href='{{url('form9')}}'"
+                <button type="button" onclick="window.location.href='{{url('/form9/'.$getbyid[0]->id)}}'"
                     class="btn btn-primary">หน้าถัดไป
                     <i class="bi bi-arrow-right-circle-fill"></i>
                 </button>

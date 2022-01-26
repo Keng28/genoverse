@@ -19,30 +19,24 @@
                     <div class="d-flex justify-content-end">
                         <a>User_ID: {{$calendar2[0]->NameUsers}}</a>
                     </div>
-
                 </header>
+                <!-- {{$getbyid}} -->
                 <div class="py-12">
                     <div class="container">
-                        <form class="image-upload" method="post" action="#"
+                        <form class="image-upload" method="post"action="{{url('/notesDetail/'.$getbyid[0]->id)}}"
                             enctype="multipart/form-data">
-
+@csrf
                             <div class="card">
                                 <div class="card-body">
                                     <div class="mb-3">
-                                        <label for="exampleFormControlTextarea1" class="form-label">สรุปนัดหมาย</label>
+                                        <label for="exampleFormControlTextarea1" class="form-label">สรุปนัดหมาย</label><br>
+                                        <label for="exampleFormControlTextarea1" class="form-label">{{$calendar2[0]->category}}</label><br>
+                                        <label for="exampleFormControlTextarea1" class="form-label">{{\Carbon\Carbon::parse($calendar2[0]->date)->format('d  M  Y')}}</label>
+                                                                            
+
                                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                            value="{{$calendar2[0]->note}}"></textarea>
+                                            value="{{$calendar2[0]->note}}" name="note">{{$calendar2[0]->note}}</textarea>
                                     </div>
-                                    <h5 class="card-title">TinyMCE Editor</h5>
-                                    {{$calendar2[0]->category}}
-                                    {{$calendar2[0]->date}}
-
-
-                                    <!-- TinyMCE Editor -->
-                                    <textarea class="tinymce-editor">
-                                  <p>{{$calendar2[0]->note}}</p>
-                                  <p>This is TinyMCE <strong>full</strong> editor</p>
-                                </textarea><!-- End TinyMCE Editor -->
 
                                 </div>
                             </div>

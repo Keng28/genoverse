@@ -20,7 +20,6 @@ class CreateForm9sTable extends Migration
             $table->integer('quiz9_1')->nullable();
             $table->integer('quiz9_2')->nullable();
             $table->integer('quiz9_3')->nullable();
-            $table->integer('quiz9_4')->nullable();
 
             $table->timestamps();
         });

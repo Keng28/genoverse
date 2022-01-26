@@ -31,14 +31,12 @@
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
     <!-- Scripts -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script> -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bootstrap-4@5/bootstrap-4.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
-    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
+    
     @livewire('navigation-menu')
 
     <style>
@@ -102,18 +100,18 @@
         <div class="container d-md-flex py-4">
             <div class="me-md-auto text-center text-md-start">
                 <div class="copyright">
-                    &copy; Copyright <strong><span>Genoverse</span></strong>. All Rights Reserved
+                     Copyright &copy; 2021 <strong><span>Genoverse</span></strong>. All Rights Reserved
                 </div>
-                <div class="credits">
+                <!-- <div class="credits">
                     Designed by <a href="#">Genoverse</a>
-                </div>
+                </div> -->
             </div>
             <div class=" text-right text-md-right pt-3 pt-md-0">
                 <div>
                 <a>E-mail: genoverse.project@gmail.com</a>
                 </div>
                 <div>
-                <a>Phone: 099-999-9999</a>
+                <a>Phone: 081-757-5058</a>
                 </div>
             </div>
         </div>

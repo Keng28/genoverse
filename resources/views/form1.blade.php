@@ -101,7 +101,7 @@
                                     <label class="form-check-label" for="inlineRadio2">วิชาชีพ</label>
                                 </div>
                                 <div class="form-check">
-                                    <a>(เช่น งานทางด้านวิทยาศาสตร์ และวิศวกร งานทางด้านสุขภาพครู อาจารย์ เป็นต้น)</a>
+                                    <a>(เช่น งานทางด้านวิทยาศาสตร์ และวิศวกร งานทางด้านสุขภาพ ครู อาจารย์ เป็นต้น)</a>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio3"
@@ -109,12 +109,12 @@
                                     <label class="form-check-label" for="inlineRadio2">เจ้าหน้าที่เทคนิค</label>
                                 </div>
                                 <div class="form-check">
-                                    <a>(เช่นงานด้านวิทยาศาสตร์ และวิศวกรรมงานด้านสุขภาพงานด้านการสอนเป็นต้น)</a>
+                                    <a>(เช่น งานด้านวิทยาศาสตร์และวิศวกรรม งานด้านสุขภาพ งานด้านการสอน เป็นต้น)</a>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio4"
                                         value="4" {{($forms1[0]->quiz_2) == '4' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานเสมียน</label>
+                                    <label class="form-check-label" for="inlineRadio2">งานเสมียน</label>
                                 </div>
                                 <div class="form-check">
                                     <a>(เช่น เสมียน เลขานุการ)</a>
@@ -122,7 +122,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio5"
                                         value="5" {{($forms1[0]->quiz_2) == '5' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="inlineRadio2">ผู้ที่ทํางานบริการ
+                                    <label class="form-check-label" for="inlineRadio2">งานบริการ
                                         และงานขาย</label>
                                 </div>
                                 <div class="form-check">
@@ -131,7 +131,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="quiz_2" id="inlineRadio6"
                                         value="6" {{($forms1[0]->quiz_2) == '6' ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="inlineRadio2">ผู้ที่ทำงานทางด้านเกษตรกรรม
+                                    <label class="form-check-label" for="inlineRadio2">งานทางด้านเกษตรกรรม
                                         ป่าไม้ และประมง</label>
                                 </div>
                                 <div class="form-check">
@@ -191,9 +191,9 @@
                 <div class="d-flex justify-content-between g-3">
                     <button type="button" onclick="window.location.href='{{url('/index')}}'" class="btn btn-primary">
                         <i class="bi bi-arrow-left-circle-fill"></i>
-                        กลับหน้าหลักของแบบประเมิน
+                        กลับหน้าหลักของแบบสอบถาม
                     </button>
-                    <button type="button" onclick="window.location.href='{{url('form2')}}'"
+                    <button type="button" onclick="window.location.href='{{url('/form2/'.$getbyid[0]->id)}}'"
                         class="btn btn-primary">หน้าถัดไป
                         <i class="bi bi-arrow-right-circle-fill"></i>
                     </button>

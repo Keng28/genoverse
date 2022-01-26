@@ -2682,6 +2682,9 @@ section {
   color: #f5f5f5;
   font-size: 20px;
 }
+.userform .box-text .info-box p{
+  color: #f5f5f5;
+}
 
 .userform .in-line h3,.userform .in-line p {
   display:inline
@@ -2713,6 +2716,11 @@ section {
 .userform .form9-input-text{
   /* margin-top: .5em; */
   margin: 15px 0px 15px 15px;
+}
+
+.userform .form9-input-text .width{
+  /* margin-top: .5em; */
+  width: 130px;
 }
 
 .userform .questionnaire a{
@@ -3057,5 +3065,4 @@ section {
 .selected {
   background-color: #e0f2ea;
 }
-
 

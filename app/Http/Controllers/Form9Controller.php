@@ -47,7 +47,6 @@ class Form9Controller extends Controller
             'quiz9_1' => $request->quiz9_1,
             'quiz9_2' => $request->quiz9_2,
             'quiz9_3' => $request->quiz9_3,
-            'quiz9_4' => $request->quiz9_4,
             ]);
         }
         
@@ -111,7 +110,6 @@ class Form9Controller extends Controller
                 'quiz9_1' => $request->quiz9_1,
                 'quiz9_2' => request('quiz9_2'),
                 'quiz9_3' => request('quiz9_3'),
-                'quiz9_4' => request('quiz9_4'),
                 
             ]);
         } else {
@@ -120,7 +118,6 @@ class Form9Controller extends Controller
             'quiz9_1' => $request->quiz9_1,
             'quiz9_2' => request('quiz9_2'),
             'quiz9_3' => request('quiz9_3'),
-            'quiz9_4' => request('quiz9_4'),
             ]);
         }
         

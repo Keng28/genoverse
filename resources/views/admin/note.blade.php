@@ -51,7 +51,7 @@
                         <!--Row-->
 
 
-                        {{$calendar}}
+                        <!-- {{$calendar}} -->
                     </div>
                 </div>
             </div>

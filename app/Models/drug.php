@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Form6 extends Model
+class drug extends Model
 {
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'quiz6_1',
-        'quiz6_1_1' => 'array',
-        'quiz6_2',
-        'quiz6_2_1' => 'array', 
+        'drug_1',
+        'drug_2',
+        'drug_3',
+        'drug_4',
+        'drug_5',
+        'drug_6',
+        'drug_7',
     ];
 }
-

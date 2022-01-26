@@ -15,10 +15,17 @@ use App\Models\User;
 use App\Models\ReportType;
 
 use App\Http\Controllers\Form1Controller;
+use App\Http\Controllers\Form2Controller;
+use App\Http\Controllers\Form3Controller;
+use App\Http\Controllers\Form4Controller;
+use App\Http\Controllers\Form5Controller;
 
+use App\Http\Controllers\Form6Controller;
 use App\Http\Controllers\Form7Controller;
 use App\Http\Controllers\Form8Controller;
 use App\Http\Controllers\Form9Controller;
+
+use App\Http\Controllers\HistoryAllergyController;
 
 
 
@@ -43,9 +50,22 @@ Route::get('/status', function () {
     return view('admin/status');
 });
 
+
+
+
 Route::get('/keng14', function () {
     Artisan::call('storage:link');
 });
+
+Route::get('/root1', function () {
+    Artisan::call('php artisan migrate:fresh --seed');
+    // Artisan::call('db:seed --class=UserSeeder');
+    // Artisan::call('storage:link');
+});
+
+
+
+
 
 Route::get('/testlayout', function () {
     return view('testlayout');
@@ -57,9 +77,7 @@ Route::get('/note', function () {
 
 
 
-Route::get('/form2', function () {
-    return view('form2');
-});
+
 Route::get('/form3', function () {
     return view('form3');
 });
@@ -119,11 +137,37 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
     Route::post('/formsupdate1/{id}',[Form1Controller::class,'update2'])->name('update2');
 
     //form2
+    Route::get('/form2/{id}',[Form2Controller::class,'store'])->name('storeform2');    
+    Route::post('/formupdate2/{id}',[Form2Controller::class,'update'])->name('updateform2');
+
+    //form3
+    Route::get('/form3/{id}',[Form3Controller::class,'store'])->name('storeform3');    
+    Route::post('/formupdate3/{id}',[Form3Controller::class,'update'])->name('updateform3');
+    Route::get('/formupdate3/del2/{id}',[Form3Controller::class,'delete'])->name('deleteform3');
+
+
+    //form4
+    Route::get('/form4/{id}',[Form4Controller::class,'store'])->name('storeform4');    
+    Route::post('/formupdate4/{id}',[Form4Controller::class,'update'])->name('updateform4');
+
+    //form5
+    Route::get('/form5/{id}',[Form5Controller::class,'store'])->name('storeform5');    
+    Route::post('/formupdate5/{id}',[Form5Controller::class,'update'])->name('updateform5');
+    Route::get('/formupdate5/del2/{id}',[Form5Controller::class,'delete'])->name('deleteform5');
+    Route::get('/formupdate5/del3/{id}',[Form5Controller::class,'delete3'])->name('delete3form5');
+
+
+    //form6
+    Route::get('/form6/{id}',[Form6Controller::class,'store'])->name('storeform6');    
+    Route::post('/formupdate6/{id}',[Form6Controller::class,'update'])->name('updateform6');
+    Route::get('/formupdate6/del/{id}',[Form6Controller::class,'destroy'])->name('destroyform6');
+    Route::get('/formupdate6/del2/{id}',[Form6Controller::class,'delete'])->name('deleteform6');
+
 
 
     //form7
-    Route::get('/form7/{id}',[Form7Controller::class,'store'])->name('storeform8');    
-    Route::post('/formupdate7/{id}',[Form7Controller::class,'update'])->name('updateform8');
+    Route::get('/form7/{id}',[Form7Controller::class,'store'])->name('storeform7');    
+    Route::post('/formupdate7/{id}',[Form7Controller::class,'update'])->name('updateform7');
 
     //form8
     Route::get('/form8/{id}',[Form8Controller::class,'store'])->name('storeform8');    
@@ -164,6 +208,7 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
     
     Route::get('/note/{id}',[AddcalendarController::class,'viewListNote'])->name('note');
     Route::get('/noteDetail/{id}',[AddcalendarController::class,'viewNote'])->name('viewNote');
+    Route::post('/notesDetail/{id}',[AddcalendarController::class,'updateNote'])->name('updateNote');
 
     Route::get('/questionnaire/{id}',[ListnameController::class,'viewform'])->name('questionnaire');
     Route::get('/details/{id}',[ListnameController::class,'viewformadmin'])->name('details');
@@ -224,7 +269,6 @@ Route::middleware(['auth:sanctum','verified'])->group(function () {
 
 });
 
-Route::post('/form1',[FromController::class,'index'])->name('form1');
 
 
 
@@ -304,19 +348,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/admin/menu4', function ()
 })->name('menu8');
 
 
-
-# /routes/api.php
-
-// Get list of meetings.
-Route::get('/meetings', 'Zoom\MeetingController@list');
-
-// Create meeting room using topic, agenda, start_time.
-Route::post('/meetings', 'Zoom\MeetingController@create');
-
-// Get information of the meeting room by ID.
-Route::get('/meetings/{id}', 'Zoom\MeetingController@get')->where('id', '[0-9]+');
-Route::patch('/meetings/{id}', 'Zoom\MeetingController@update')->where('id', '[0-9]+');
-Route::delete('/meetings/{id}', 'Zoom\MeetingController@delete')->where('id', '[0-9]+');
 
 
 //user

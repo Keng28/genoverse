@@ -341,6 +341,31 @@ class AddcalendarController extends Controller
         return view('admin.notedetail',compact(['getbyid','calendar','calendar2']));
     }
 
+    public function updateNote(Request $request, $id){
+        $gg = $id;
+        //dd($gg);
+        $update = Addcalendar::find($id)->update([
+
+           
+            'note'=> $request->note,
+        ]);
+
+        // return response()->json([
+        //     'resultCode'=> "20000",
+        //     'resultDescription'=> "Success",
+        //     'req'=> $request,
+        //     'id'=> $id,
+        //     'gg'=> $gg,
+        //   ], 200);
+        return redirect()->back()->with('success',"บันทึกสำเร็จ");
+        
+        
+        //return redirect()->route('addCalenderindex2')->with('success',"อัพเดตข้อมูลเรียบร้อย");
+
+        //return redirect()->route('department')->with('success',"บันทึกสำเร็จ");
+    }
+
+
 
 
 

@@ -5,6 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Form6;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\HistoryAllergyController;
+use App\Models\HistoryAllergyDrugController;
+
+
 class Form6Controller extends Controller
 {
     /**
@@ -33,9 +40,44 @@ class Form6Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+        $user = Form6::where('user_id', $id)->first();
+        if($user==null){
+            $user = Form6::create([
+            'user_id' => $id,
+            ]);
+        }
+        
+        $getbyid = DB::table('users')
+            ->select(
+                'users.*',
+            )
+            ->where("users.id",$id)
+            ->get();
+
+        $history_allergies = DB::table('history_allergies')
+            ->select(
+                'history_allergies.*',
+            )
+            ->where("user_id",$id)
+            ->get();
+
+        $history_allergy_drugs = DB::table('history_allergy_drugs')
+            ->select(
+                'history_allergy_drugs.*',
+            )
+            ->where("user_id",$id)
+            ->get();
+
+        $forms = DB::table('form6s')
+            ->select(
+                'form6s.*',
+            )
+            ->where("user_id",$id)
+            ->get();
+        
+        return view('form6',compact(['getbyid','forms','history_allergies','history_allergy_drugs']));
     }
 
     /**
@@ -67,9 +109,58 @@ class Form6Controller extends Controller
      * @param  \App\Models\Form6  $form6
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Form6 $form6)
+    public function update(Request $request, $id)
     {
-        //
+        $user = Form6::where('user_id', $id)->first();
+        //$data = $request->all();
+        //$data2 = $request->quiz6_1_1;
+        
+      //dd($data2);
+
+         
+        $array = [[1,"kkkkk"],[2,"kkdkkmkkkk"]];
+
+
+
+        if ($user !== null ) {
+            DB::table('form6s')
+            ->where('user_id', $id)
+            ->update(array(
+                'quiz6_1' => request('quiz6_1'),
+                'quiz6_2' => request('quiz6_2'),
+                
+        ));
+        } else {
+            $user = Form6::create([
+            'user_id' => $id,
+            ]);
+        }
+
+
+        // $food = HistoryAllergyController::updateOrCreate(
+        //     ['user_id' => $id],
+        //     ['quiz6_1_1' => $request->quiz6_1_1]
+        // );
+        if($request->quiz6_1_1 != null){
+            $food = DB::table('history_allergies')->insert([
+            'user_id' => $id,
+            'quiz6_1_1' => $request->quiz6_1_1,
+            ]);
+        }
+
+        if($request->quiz6_2_1 != null){
+            $drug = DB::table('history_allergy_drugs')->insert([
+            'user_id' => $id,
+            'quiz6_2_1' => $request->quiz6_2_1,
+            ]);
+        }
+        
+        
+        
+        
+        return redirect()->back()->with('success',"บันทึกสำเร็จ");
+
+
     }
 
     /**
@@ -78,8 +169,19 @@ class Form6Controller extends Controller
      * @param  \App\Models\Form6  $form6
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Form6 $form6)
+    public function destroy($id)
     {
-        //
+        $delete = DB::table('history_allergies')->where('id', '=', $id)->delete();
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+
+    }
+    
+
+    public function delete($id)
+    {
+       $delete = DB::table('history_allergy_drugs')->where('id', '=', $id)->delete();
+        return redirect()->back()->with('success',"ลบข้อมูลถาวรเรียบร้อย");
+          
+
     }
 }

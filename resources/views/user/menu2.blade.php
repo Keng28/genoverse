@@ -6,7 +6,7 @@
                 <header class="section-header d-flex justify-content-between" data-aos="fade-up">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <p>แบบประเมินประวัติสุขภาพ</p>
+                            <p>แบบสอบถามด้านสุขภาพ</p>
                             <div class="section-header-line"></div>
                         </div>
 
@@ -25,7 +25,7 @@
 
                 </header>
 
-                <h3>กรุณากรอกแบบประเมินประวัติสุขภาพทั้งหมดให้ครบถ้วน</h3>
+                <h3>กรุณาตอบแบบสอบถามให้ครบถ้วน และกดปุ่มบันทึกข้อมูลในแต่ละส่วน ก่อนทำนัดหมาย</h3>
 
                 <br>
                 <div class="row">
@@ -42,8 +42,8 @@
                                         <img src="{{asset('/img/user.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part1}}%;">
+                                            {{$part1}}%
                                         </div>
                                     </div>
                                 </div>
@@ -54,13 +54,13 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 2</p>
-                                            <a href="{{url('form2')}}" class="stretched-link">ประวัติการเจ็บป่วย</a>
+                                            <a href="{{url('/form2/'.$getbyid[0]->id)}}" class="stretched-link">ประวัติการเจ็บป่วย</a>
                                         </div>
                                         <img src="{{asset('/img/anatomy.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part2}}%;">
+                                            {{$part2}}%
                                         </div>
                                     </div>
                                 </div>
@@ -71,14 +71,14 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 3</p>
-                                            <a href="{{url('form3')}}"
+                                            <a href="{{url('/form3/'.$getbyid[0]->id)}}"
                                                 class="stretched-link">ประวัติการเจ็บป่วยโรคมะเร็ง</a>
                                         </div>
                                         <img src="{{asset('/img/cancer.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part3}}%;">
+                                            {{$part3}}%
                                         </div>
                                     </div>
                                 </div>
@@ -89,14 +89,14 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 4</p>
-                                            <a href="{{url('form4')}}"
+                                            <a href="{{url('/form4/'.$getbyid[0]->id)}}"
                                                 class="stretched-link">ประวัติการเจ็บป่วยระบบประสาท</a>
                                         </div>
                                         <img src="{{asset('/img/brain.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part4}}%;">
+                                            {{$part4}}%
                                         </div>
                                     </div>
                                 </div>
@@ -107,14 +107,14 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 5</p>
-                                            <a href="{{url('form5')}}"
+                                            <a href="{{url('/form5/'.$getbyid[0]->id)}}"
                                                 class="stretched-link">การรับประทานยา/อาหารเสริม</a>
                                         </div>
                                         <img src="{{asset('/img/no-drugs.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part5}}%;">
+                                            {{$part5}}%
                                         </div>
                                     </div>
                                 </div>
@@ -125,14 +125,14 @@
                                     <div class="d-flex justify-content-between part">
                                         <div>
                                             <p>ส่วนที่ 6</p>
-                                            <a href="{{url('form6')}}" class="stretched-link">ประวัติการแพ้อาหาร
+                                            <a href="{{url('/form6/'.$getbyid[0]->id)}}" class="stretched-link">ประวัติการแพ้อาหาร
                                                 การแพ้ยา</a>
                                         </div>
                                         <img src="{{asset('/img/medical-history.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part6}}%;">
+                                            {{$part6}}%
                                         </div>
                                     </div>
                                 </div>
@@ -148,8 +148,8 @@
                                         <img src="{{asset('/img/family.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part7}}%;">
+                                            {{$part7}}%
                                         </div>
                                     </div>
                                 </div>
@@ -166,8 +166,8 @@
                                         <img src="{{asset('/img/cigarettes.png')}}" width="80" alt="">
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part8}}%;">
+                                            {{$part8}}%
                                         </div>
                                     </div>
                                 </div>
@@ -183,8 +183,8 @@
                                         <img src="{{asset('/img/headache.png')}}" width="80" alt="" cla>
                                     </div>
                                     <div class="progress">
-                                        <div class="progress-bar" style="width:80%;">
-                                            80%
+                                        <div class="progress-bar" style="width:{{$part9}}%;">
+                                            {{$part9}}%
                                         </div>
                                     </div>
                                 </div>

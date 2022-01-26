@@ -270,11 +270,11 @@
                                                             <span class="badge bg-secondary">Walkin</span>
                                                             @else
                                                             <a class="btn btn-primary" href="{{$row->link}}"
-                                                                target="_blank" ><i
-                                                                    class="bi bi-telephone-fill"></i>
+                                                                target="_blank"><i class="bi bi-telephone-fill"></i>
                                                             </a>
                                                             @endif
-                                                            <a class="btn btn-warning" href="{{url('/noteDetail/'.$row->id)}}"target="_blank" >
+                                                            <a class="btn btn-warning"
+                                                                href="{{url('/noteDetail/'.$row->id)}}" target="_blank">
                                                                 <i class="bi bi-file-earmark-plus"></i>
                                                             </a>
                                                             <a class="btn btn-danger postbutton1 ondel"

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateForm6sTable extends Migration
+class CreateForm5sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class CreateForm6sTable extends Migration
      */
     public function up()
     {
-        Schema::create('form6s', function (Blueprint $table) {
+        Schema::create('form5s', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->nullable();
 
-            $table->integer('quiz6_1')->nullable();
-            // $table->json('quiz6_1_1')->nullable();
-            $table->integer('quiz6_2')->nullable();
-            // $table->json('quiz6_2_1')->nullable();
+            $table->integer('quiz5_1')->nullable();
+            $table->integer('quiz5_2')->nullable();
+
+            $table->json('quiz5_2_1_1')->nullable();
+            $table->string('quiz5_2_1_2')->nullable();
+
+            $table->json('quiz5_2_2_1')->nullable();
+            $table->string('quiz5_2_2_2')->nullable();
 
             $table->timestamps();
         });
@@ -33,6 +37,6 @@ class CreateForm6sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form6s');
+        Schema::dropIfExists('form5s');
     }
 }

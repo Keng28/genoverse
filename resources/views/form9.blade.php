@@ -22,6 +22,7 @@
                         <div class="box-text">
                             <div class="info-box">
                                 <div class="in-line">
+                                    
                                     <h3>ความเครียด</h3>
                                     <p>หมายถึง ความรู้สึกฉุนเฉียวง่าย หรือวิตกกังวล หรือ หลับยาก
                                         ซึ่งเป็นผลจากสภาวะที่ทำงานหรือที่บ้าน
@@ -37,7 +38,7 @@
                                 @csrf
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">9.1
-                                        ท่านเคยรู้สึกเครียดบ่อยแค่ไหนในที่ทำงานในช่วง 12 เดือนที่ผ่านมา</label>
+                                        ท่านเคยรู้สึกเครียดบ่อยแค่ไหนใน<u>ที่ทำงาน</u>ในช่วง 12 เดือนที่ผ่านมา</label>
                                     <br>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="quiz9_1" id="quiz9_1"
@@ -65,7 +66,7 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="inputAddress" class="form-label">9.2
-                                        ท่านเคยรู้สึกเครียดบ่อยแค่ไหนที่บ้านในช่วง 12 เดือนที่ผ่านมา</label>
+                                        ท่านเคยรู้สึกเครียดบ่อยแค่ไหน<u>ที่บ้าน</u>ในช่วง 12 เดือนที่ผ่านมา</label>
                                     <br>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="quiz9_2" id="quiz9_2"
@@ -119,49 +120,7 @@
                                         <label class="form-check-label" for="inlineRadio2">ไม่มีเลย</label>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <label for="inputAddress" class="form-label">9.4
-                                        ท่านมีความเป็นตัวเองหรืออิสระแค่ไหนในการจัดการเหตุการณ์ต่างๆ
-                                        ในวันทำงานของท่าน</label>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="1" {{($forms[0]->quiz9_4 == '1' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio1">ไม่ตรง
-                                            หรือไม่เข้ากับคำถาม</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="2" {{($forms[0]->quiz9_4 == '2' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio2">สมบูรณ์</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="3" {{($forms[0]->quiz9_4 == '3' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio2">ระดับมากพอสมควร</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="4" {{($forms[0]->quiz9_4 == '4' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio2">ปานกลาง</label>
-                                    </div>
-                                    <br>
-
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="5" {{($forms[0]->quiz9_4 == '5' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio2">เล็กน้อย</label>
-                                    </div>
-                                    <br>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="quiz9_4" id="quiz9_4"
-                                            value="6" {{($forms[0]->quiz9_4 == '6' ?  'checked' : '')}}>
-                                        <label class="form-check-label" for="inlineRadio2">ไม่มีเลย</label>
-                                    </div>
-                                </div>
+                               
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i>
                                         บันทึก
@@ -175,7 +134,7 @@
                 <div class="d-flex justify-content-between g-3">
                     <button type="button" onclick="window.location.href='{{url('/index')}}'" class="btn btn-primary">
                         <i class="bi bi-arrow-left-circle-fill"></i>
-                        กลับหน้าหลักของแบบประเมิน
+                        กลับหน้าหลักของแบบสอบถาม
                     </button>
                     <button type="button" onclick="window.location.href='{{ route('addCalenderuser')}}'"
                         class="btn btn-primary">ทำนัดหมาย

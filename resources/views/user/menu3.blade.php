@@ -75,7 +75,7 @@
 
         Swal.fire({
             title: 'เพิ่มการนัดหมาย',
-            text: "คุณจะไม่สามารถย้อนกลับได้",
+            // text: "คุณจะไม่สามารถย้อนกลับได้",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -166,7 +166,7 @@
                                                         <table class="table table-striped table-bordered table-sm ">
                                                             <thead class="thead-light">
                                                                 <tr>
-                                                                    <th>No</th>
+                                                                    
                                                                     <th>วันที่</th>
                                                                     <th>เริ่มเวลา</th>
                                                                     <th>สิ้นสุดเวลา</th>
@@ -179,7 +179,7 @@
                                                                 @if($row->category == 'Pre-test Counseling')
 
                                                                 <tr>
-                                                                    <td>{{$i++}}</td>
+                                                                    
                                                                     <td>{{\Carbon\Carbon::parse($row->date)->format('d  M  Y')}}
                                                                     </td>
                                                                     <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$row->time)->format('h:i')}}
@@ -232,7 +232,7 @@
                                                         <table class="table table-striped table-bordered table-sm ">
                                                             <thead class="thead-light">
                                                                 <tr>
-                                                                    <th>No</th>
+                                                                    
                                                                     <th>วันที่</th>
                                                                     <th>เริ่มเวลา</th>
                                                                     <th>สิ้นสุดเวลา</th>
@@ -245,7 +245,7 @@
                                                                 @if($row->category == 'Blood Collection')
 
                                                                 <tr>
-                                                                    <td>{{$i++}}</td>
+                                                                    
                                                                     <td>{{\Carbon\Carbon::parse($row->date)->format('d  M  Y')}}
                                                                     </td>
                                                                     <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$row->time)->format('h:i')}}
@@ -298,7 +298,7 @@
                                                         <table class="table table-striped table-bordered table-sm ">
                                                             <thead class="thead-light">
                                                                 <tr>
-                                                                    <th>No</th>
+                                                                    
                                                                     <th>วันที่</th>
                                                                     <th>เริ่มเวลา</th>
                                                                     <th>สิ้นสุดเวลา</th>
@@ -311,7 +311,7 @@
                                                                 @if($row->category == 'Post-test Counseling')
 
                                                                 <tr>
-                                                                    <td>{{$i++}}</td>
+                                                                   
                                                                     <td>{{\Carbon\Carbon::parse($row->date)->format('d  M  Y')}}
                                                                     </td>
                                                                     <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$row->time)->format('h:i')}}
@@ -487,13 +487,9 @@
                                 </div>
 
                                 <h2>
-                                    ติดต่อ Admin ตามช่องทางดังต่อไปนี้
-                                </h2>
-                                <h2>
-                                    E-mail: genoverse.project@gmail.com
-                                </h2>
-                                <h2>
-                                    Phone: 099-999-9999
+                                    หากท่านมีข้อสงสัย กรุณาติดต่อเจ้าหน้าที่ <br>
+                                    Email:  genoverse.project@gmail.com <br>
+                                    Tel. 095-9955645
                                 </h2>
                             </div>
                         </div>
@@ -513,5 +509,4 @@
 
         </section><!-- End UserProcess -->
     </main>
-
 </x-app-layout>

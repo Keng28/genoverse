@@ -16,7 +16,7 @@
                 @elseif(Auth::user()->role==0)
                 <!-- <li><a class="nav-link scrollto active" href="{{ asset('user/menu1')}}">ขั้นตอนการเข้ารับบริการ</a></li> -->
                 <li><a class="nav-link scrollto active"
-                        href="{{route('questionnaireuser')}}">แบบประเมินประวัติสุขภาพ</a></li>
+                        href="{{route('questionnaireuser')}}">แบบสอบถามด้านสุขภาพ</a></li>
                 <li><a class="nav-link scrollto active" href="{{ route('addCalenderuser')}}">นัดหมาย</a></li>
                 <li><a class="nav-link scrollto active" href="{{ route('userreport')}}">รายงานผล</a></li>
                 @endif

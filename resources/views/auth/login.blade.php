@@ -66,10 +66,10 @@
    
           
 
-                <div class="col-md-12 text-center">
+                <!-- <div class="col-md-12 text-center">
                     <a>ยังไม่มีบัญชี?</a>
                     <a href="{{ route('register') }}">สมัครเข้าใช้งาน</a>
-                </div>
+                </div> -->
 
                 </div>
             </form>

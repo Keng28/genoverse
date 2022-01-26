@@ -129,8 +129,8 @@ class Form8Controller extends Controller
                 'quiz8_2_1_1' => null,
                 'quiz8_2_1_2' => null,
                 'quiz8_2_1_3' => null,
-                'quiz8_1_2_4' => null,
-                'quiz8_1_2_5' => null,
+                'quiz8_2_1_4' => null,
+                'quiz8_2_1_5' => null,
                 'quiz8_2_2_1' => null,
                 'quiz8_2_2_2' => null,
                 'quiz8_2_2_3' => null,
@@ -186,8 +186,8 @@ class Form8Controller extends Controller
                 'quiz8_2_1_1' => request('quiz8_2_1_1'),
                 'quiz8_2_1_2' => request('quiz8_2_1_2'),
                 'quiz8_2_1_3' => request('quiz8_2_1_3'),
-                'quiz8_1_2_4' => request('quiz8_1_2_4'),
-                'quiz8_1_2_5' => request('quiz8_1_2_5'),
+                'quiz8_2_1_4' => request('quiz8_2_1_4'),
+                'quiz8_2_1_5' => request('quiz8_2_1_5'),
                 'quiz8_2_2_1' => null,
                 'quiz8_2_2_2' => null,
                 'quiz8_2_2_3' => null,
@@ -202,8 +202,8 @@ class Form8Controller extends Controller
                 'quiz8_2_1_1' => null,
                 'quiz8_2_1_2' => null,
                 'quiz8_2_1_3' => null,
-                'quiz8_1_2_4' => null,
-                'quiz8_1_2_5' => null,
+                'quiz8_2_1_4' => null,
+                'quiz8_2_1_5' => null,
                 'quiz8_2_2_1' => request('quiz8_2_2_1'),
                 'quiz8_2_2_2' => request('quiz8_2_2_2'),
                 'quiz8_2_2_3' => request('quiz8_2_2_3'),
@@ -234,71 +234,7 @@ class Form8Controller extends Controller
                 'quiz8_3_4' => null, 
             ]);
         }
-        // if ($user !== null && $request->quiz8_1 == 2) {
-        //     $user->update([
-        //         'user_id' => $id ,
-
-        //         'quiz8_1' => request('quiz8_1'),
-        //         'quiz8_1_1_1' => request('quiz8_1_1_1'),
-        //         'quiz8_1_1_2' => request('quiz8_1_1_2'),
-        //         'quiz8_1_1_3' => request('quiz8_1_1_3'),
-        //         'quiz8_1_2_1' => null,
-        //         'quiz8_1_2_2' => null,
-        //         'quiz8_1_2_3' => null,
-        //         'quiz8_1_2_4' => null,
-
-        //         'quiz8_2' => request('quiz8_2'),
-        //         'quiz8_2_1_1' => request('quiz8_2_1_1'),
-        //         'quiz8_2_1_2' => request('quiz8_2_1_2'),
-        //         'quiz8_2_1_3' => request('quiz8_2_1_3'),
-        //         'quiz8_2_1_4' => request('quiz8_2_1_4'),
-        //         'quiz8_2_1_5' => request('quiz8_2_1_5'),
-
-        //         'quiz8_2_2_1' => request('quiz8_2_2_1'),
-        //         'quiz8_2_2_2' => request('quiz8_2_2_2'),
-        //         'quiz8_2_2_3' => request('quiz8_2_2_3'),
-        //         'quiz8_2_2_4' => request('quiz8_2_2_4'),
-
-        //         'quiz8_3' => request('quiz8_3'),
-        //         'quiz8_3_1' => request('quiz8_3_1'),
-        //         'quiz8_3_2' => request('quiz8_3_2'),
-        //         'quiz8_3_3' => request('quiz8_3_3'),
-        //         'quiz8_3_4' => request('quiz8_3_4'),
-                
-        //     ]);
-        // } elseif($user !== null && $request->quiz8_1 == 3){
-        //     $user->update([
-        //         'user_id' => $id ,
-
-        //         'quiz8_1' => request('quiz8_1'),
-        //         'quiz8_1_1_1' => null,
-        //         'quiz8_1_1_2' => null,
-        //         'quiz8_1_1_3' => null,
-        //         'quiz8_1_2_1' => request('quiz8_1_2_1'),
-        //         'quiz8_1_2_2' => request('quiz8_1_2_2'),
-        //         'quiz8_1_2_3' => request('quiz8_1_2_3'),
-        //         'quiz8_1_2_4' => request('quiz8_1_2_4'),
-
-        //         'quiz8_2' => request('quiz8_2'),
-        //         'quiz8_2_1_1' => request('quiz8_2_1_1'),
-        //         'quiz8_2_1_2' => request('quiz8_2_1_2'),
-        //         'quiz8_2_1_3' => request('quiz8_2_1_3'),
-        //         'quiz8_2_1_4' => request('quiz8_2_1_4'),
-        //         'quiz8_2_1_5' => request('quiz8_2_1_5'),
-
-        //         'quiz8_2_2_1' => request('quiz8_2_2_1'),
-        //         'quiz8_2_2_2' => request('quiz8_2_2_2'),
-        //         'quiz8_2_2_3' => request('quiz8_2_2_3'),
-        //         'quiz8_2_2_4' => request('quiz8_2_2_4'),
-
-        //         'quiz8_3' => request('quiz8_3'),
-        //         'quiz8_3_1' => request('quiz8_3_1'),
-        //         'quiz8_3_2' => request('quiz8_3_2'),
-        //         'quiz8_3_3' => request('quiz8_3_3'),
-        //         'quiz8_3_4' => request('quiz8_3_4'),
-                
-        // ]);
-
+        
       
         if($user == null ) {
             $user = Form8::create([
